@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head><script src="packages/shadow_dom/shadow_dom.debug.js"></script>
+<script src="packages/custom_element/custom-elements.debug.js"></script>
+<script src="packages/browser/interop.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" type="text/css">
+    <title>Seksi Chatti</title>
+    <link rel="stylesheet" href="dartapp.css">
+  
+    
+    
+    <script src="dartapp.html_bootstrap.dart.js"></script>
+    
+  </head>
+  <body><polymer-element name="click-counter" attributes="count">
+  <template>
+    <style>
+    </style>
+    <div>
+      <button on-click="{{increment}}">Click me</button><br>
+      <span>(click count: {{count}})</span>
+    </div>
+  </template>
+  
+</polymer-element><polymer-element name="left-panel" attributes="count">
+  <template>
+    <style>
+
+    </style>
+    <div>
+      <button on-click="{{increment}}">Click me</button><br>
+      <span>(click count: {{count}})</span>
+    </div>
+    
+    <template repeat="{{character in charaterarr}}">
+ 
+     <div class="media"><img class="media-object pull-left itemimagea" src="{{ character.img}}" alt=""><div class="media-body"> <div class="media-heading">{{ character.name}}</div></div>{{ character.age}}</div> 
+    </template>  
+    
+  </template>
+  
+</polymer-element>
+  <div id="bigspinner" class="bigspinner"><i class="fa fa-spinner fa-spin fa-5x"></i>Odotta... </div>
+ 
+ <div class="row">
+  <div class="col-md-4"><left-panel id="left-panel" class="left-panel" count="3"></left-panel></div>
+  <div class="col-md-8">
+
+    
+    <div id="sample_container_id">
+      <click-counter count="5"></click-counter>
+    </div>
+   </div>
+   </div> 
+    
+   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  
+
+</body></html>

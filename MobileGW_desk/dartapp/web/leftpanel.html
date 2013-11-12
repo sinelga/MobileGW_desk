@@ -1,0 +1,19 @@
+<polymer-element name="left-panel" attributes="count">
+  <template>
+    <style>
+
+    </style>
+    <div>
+      <button on-click="{{increment}}">Click me</button><br>
+      <span>(click count: {{count}})</span>
+    </div>
+    
+    <template repeat="{{character in charaterarr}}">
+ 
+     <div class='media'><img class='media-object pull-left itemimagea' src='{{ character.img}}' alt=''><div class='media-body'> <div class='media-heading'>{{ character.name}}</div></div>{{ character.age}}</div> 
+    </template>  
+    
+  </template>
+  <script type="application/dart" src="leftpanel.dart"></script>
+</polymer-element>
+
