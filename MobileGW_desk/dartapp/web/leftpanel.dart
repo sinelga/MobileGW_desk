@@ -26,7 +26,7 @@ class LeftPanel extends PolymerElement {
     
     result.then((js.Proxy proxy) {
       
-      print("Donloaded");
+//      print("Donloaded");
       startevent.start();
       
 //      querySelector('#bigspinner').style.display="none";
@@ -38,9 +38,9 @@ class LeftPanel extends PolymerElement {
     
   }
 
-  void increment() {
-    count++;
-  }
+//  void increment() {
+//    count++;
+//  }
   
   void display(var data,List characterarr) {
     
