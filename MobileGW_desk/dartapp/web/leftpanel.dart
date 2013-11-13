@@ -71,7 +71,7 @@ class LeftPanel extends PolymerElement {
   
   void selectCharacter(Event e) {
     
-    var sel = e.currentTarget as Element;
+//    var sel = e.currentTarget as Element;
     var id =  int.parse((e.currentTarget as Element).id);
 
     Characterelement characterelement = querySelector('#character-element');

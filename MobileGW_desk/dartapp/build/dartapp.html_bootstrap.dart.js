@@ -45549,16 +45549,14 @@ J.OZ(t,s)
 "+display:2:0":1,
 guL:function(a){return new W.azT(this,V.jqH.prototype.FM,a,"FM")},
 Fp4:function(a,b){var z,y,x,w
-z=J.RE(b)
-H.Go(z.gAJ(b),"$iscv")
-y=H.BU(H.Go(z.gAJ(b),"$iscv").id,null,null)
-x=document.querySelector("#character-element")
-a.ZQ=J.UQ(a.Wk,y)
-z=a.ZQ
-w=J.RE(z)
-w.sFa(z,J.M3(w.gFa(z),"w110shadow6","w300shadow"))
+z=H.BU(H.Go(J.Vj(b),"$iscv").id,null,null)
+y=document.querySelector("#character-element")
+a.ZQ=J.UQ(a.Wk,z)
+x=a.ZQ
+w=J.RE(x)
+w.sFa(x,J.M3(w.gFa(x),"w110shadow6","w300shadow"))
 P.JS(J.tc(a.ZQ))
-J.OZ(x,a.ZQ)
+J.OZ(y,a.ZQ)
 "273,294,84"},
 "+selectCharacter:1:0":1,
 it:function(a){J.oA(Z.Lt(null,"http://79.125.21.225:3090/get_characters?number=50&orient=portrait&callback=?",null),new V.Zd(a))
