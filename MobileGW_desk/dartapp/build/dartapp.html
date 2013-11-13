@@ -44,13 +44,15 @@
     
   </template>
   
-</polymer-element><polymer-element name="character-element">
+</polymer-element><polymer-element name="character-element" apply-author-styles="">
   <template>
     <style>
 
     </style>
-  <span>(click count: {{name}})</span>
-  <span>(click count2: {{character.name}})</span>
+    
+    <div class="navbar navbar-fixed-top character-element"><div class="media"><img class="media-object pull-left" src="{{ character.img}}" alt=""><div class="media-body"> <div class="media-heading">{{ character.name}}</div></div></div></div>
+
+  
     
   </template>
   
@@ -65,6 +67,7 @@
 -->  
 <left-panel id="left-panel" class="left-panel"></left-panel>
 <character-element id="character-element" class="navbar navbar-fixed-top character-element"></character-element>
+ 
    
    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>

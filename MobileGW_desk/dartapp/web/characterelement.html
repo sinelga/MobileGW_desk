@@ -1,10 +1,12 @@
-<polymer-element name="character-element" >
+<polymer-element name="character-element" apply-author-styles>
   <template>
     <style>
 
     </style>
-  <span>(click count: {{name}})</span>
-  <span>(click count2: {{character.name}})</span>
+    
+    <div class='navbar navbar-fixed-top character-element'><div class='media'><img class='media-object pull-left' src='{{ character.img}}' alt=''><div class='media-body'> <div class='media-heading'>{{ character.name}}</div></div></div></div>
+
+  
     
   </template>
   <script type="application/dart" src="characterelement.dart"></script>

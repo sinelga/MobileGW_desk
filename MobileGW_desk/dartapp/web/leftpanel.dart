@@ -10,7 +10,8 @@ import 'characterelement.dart';
 
 @CustomTag('left-panel')
 class LeftPanel extends PolymerElement {
-
+  Character characterselected;
+  
    List charaterarr = toObservable(new List<Character>());
   
   LeftPanel.created() : super.created() {
@@ -48,33 +49,36 @@ class LeftPanel extends PolymerElement {
       character.phone = data[i].phone;
 
       characterarr.add(character);
-      
-      var rng = new Random();
-      var rngint =rng.nextInt(characterarr.length);
-      Characterelement characterelement = querySelector('#character-element');
-      characterelement.character=charaterarr[rngint];
-      
-      
+                
     }
+    
+    var rng = new Random();
+    var rngint =rng.nextInt(characterarr.length);
+    Characterelement characterelement = querySelector('#character-element');
+    var firstcharacter = new Character();
+    firstcharacter.id = charaterarr[rngint].id;
+    firstcharacter.name = charaterarr[rngint].name;
+    firstcharacter.age = charaterarr[rngint].age;
+    firstcharacter.city = charaterarr[rngint].city;
+    firstcharacter.desc = charaterarr[rngint].desc;
+    firstcharacter.img = charaterarr[rngint].img.replaceFirst("w110shadow6", "w300shadow");
+    firstcharacter.moto = charaterarr[rngint].moto;
+    firstcharacter.phone = charaterarr[rngint].phone;
 
+    characterelement.character=firstcharacter;
+    
   }
   
   void selectCharacter(Event e) {
     
     var sel = e.currentTarget as Element;
     var id =  int.parse((e.currentTarget as Element).id);
-//    var old;
-//    var old =querySelector('#click-counter').getAttribute("count");
-//    querySelector('#click-counter').setAttribute("count","11");
-//    querySelector('#character-element').setAttribute("character",charaterarr[0]);
-//    querySelector('#character-element').setAttribute("name","test");
+
     Characterelement characterelement = querySelector('#character-element');
-//    characterelement.name="test";
-    characterelement.character=charaterarr[id];
-    
-//    old="11";
-    
-//    print(old);
+    characterselected = charaterarr[id];    
+    characterselected.img=characterselected.img.replaceFirst("w110shadow6", "w300shadow");
+    print(characterselected.img);
+    characterelement.character=characterselected;
     
     
   }
