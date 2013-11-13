@@ -509,3 +509,343 @@ build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --
 
 build.dart finished [4449 ms]
 
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1200 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1152 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1151 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1131 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1108 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1156 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1151 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1144 ms]
+
+---
+build.dart --machine --changed=web/domains.dart
+
+build.dart finished [1123 ms]
+
+---
+build.dart --machine --changed=web/domains.dart --changed=web/leftpanel.dart
+
+build.dart finished [1163 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1145 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1114 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1168 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1166 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1164 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1117 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1124 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1130 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1181 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1147 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1118 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1145 ms]
+
+---
+build.dart --machine --changed=web/character.html
+
+build.dart finished [1166 ms]
+
+---
+build.dart --machine --changed=web/character.dart
+
+build.dart finished [1195 ms]
+
+---
+build.dart --machine --changed=web/character.html
+
+build.dart finished [1141 ms]
+
+---
+build.dart --machine --changed=web/character.html
+
+build.dart finished [1196 ms]
+
+---
+build.dart --machine --changed=web/character.html
+
+build.dart finished [1155 ms]
+
+---
+build.dart --machine --changed=web/character.dart
+
+build.dart finished [1155 ms]
+
+---
+build.dart --machine --changed=web/character.dart
+
+build.dart finished [1136 ms]
+
+---
+build.dart --machine --changed=web/character.html
+
+build.dart finished [1119 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1172 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1143 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1186 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1136 ms]
+
+---
+build.dart --machine --changed=web/character.dart
+
+build.dart finished [1146 ms]
+
+---
+build.dart --machine --changed=web/character.dart
+
+build.dart finished [1783 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html --removed=web/character.html
+[{"method":"error","params":{"file":"web/dartapp.html","message":"couldn't find imported asset \"web/character.html\" in package \"dartapp\".","line":15,"charStart":661,"charEnd":702}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"definition for Polymer element with tag name \"character-element\" not found.","line":26,"charStart":1110,"charEnd":1152}}]
+build.dart finished [1288 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+[{"method":"error","params":{"file":"web/dartapp.html","message":"couldn't find imported asset \"web/character.html\" in package \"dartapp\".","line":15,"charStart":661,"charEnd":702}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"definition for Polymer element with tag name \"character-element\" not found.","line":26,"charStart":1110,"charEnd":1152}}]
+build.dart finished [1214 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart --removed=web/character.dart
+[{"method":"error","params":{"file":"web/dartapp.html","message":"couldn't find imported asset \"web/character.html\" in package \"dartapp\".","line":15,"charStart":661,"charEnd":702}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"definition for Polymer element with tag name \"character-element\" not found.","line":26,"charStart":1110,"charEnd":1152}}]
+build.dart finished [1192 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+[{"method":"error","params":{"file":"web/dartapp.html","message":"couldn't find imported asset \"web/character.html\" in package \"dartapp\".","line":15,"charStart":661,"charEnd":702}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"definition for Polymer element with tag name \"character-element\" not found.","line":26,"charStart":1110,"charEnd":1152}}]
+build.dart finished [1187 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+[{"method":"error","params":{"file":"web/dartapp.html","message":"couldn't find imported asset \"web/character.html\" in package \"dartapp\".","line":15,"charStart":661,"charEnd":702}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"definition for Polymer element with tag name \"character-element\" not found.","line":26,"charStart":1110,"charEnd":1152}}]
+build.dart finished [1326 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1155 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart --changed=web/characterelement.html
+
+build.dart finished [1274 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1269 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1194 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1134 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1157 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1195 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1188 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1134 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1171 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart --changed=web/leftpanel.dart
+
+build.dart finished [1305 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1171 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1189 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1145 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1150 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1257 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1335 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1350 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1174 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1199 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1202 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [9183 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1182 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1143 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1207 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1678 ms]
+

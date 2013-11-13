@@ -27,7 +27,13 @@ body {
   margin-right: auto ;
 }
 
-.left-panel {
-  
+.left-panel {  
   display: none;
+}
+
+.character-element {
+   width: 50%;
+  margin-left: auto ;
+  margin-right: auto ;
+  
 }

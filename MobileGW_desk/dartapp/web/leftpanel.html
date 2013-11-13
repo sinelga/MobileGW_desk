@@ -1,4 +1,4 @@
-<polymer-element name="left-panel" attributes="count">
+<polymer-element name="left-panel" >
   <template>
     <style>
 
@@ -11,7 +11,7 @@
     -->
     <template repeat="{{character in charaterarr}}">
  
-     <div class='media'><img class='media-object pull-left itemimagea' src='{{ character.img}}' alt=''><div class='media-body'> <div class='media-heading'>{{ character.name}}</div></div>{{ character.age}}</div> 
+     <div class='media' on-click="{{selectCharacter}}" id='{{ character.id}}'><img class='media-object pull-left itemimagea' src='{{ character.img}}' alt=''><div class='media-body'> <div class='media-heading'>{{ character.name}}</div></div>{{ character.age}}</div> 
     </template>  
     
   </template>

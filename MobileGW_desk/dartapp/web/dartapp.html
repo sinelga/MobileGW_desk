@@ -12,23 +12,22 @@
   
     <link rel="import" href="clickcounter.html">
     <link rel="import" href="leftpanel.html">
+     <link rel="import" href="characterelement.html">
     <script type="application/dart">export 'package:polymer/init.dart';</script>
     <script src="packages/browser/dart.js"></script>
   </head>
   <body>
   <div id='bigspinner' class='bigspinner'><i class="fa fa-spinner fa-spin fa-5x"></i>Odotta... </div>
- 
- <div class="row">
-  <div class="col-md-4"><left-panel id='left-panel' class='left-panel' count="3"></left-panel></div>
-  <div class="col-md-8">
 
-    
-    <div id="sample_container_id">
-      <click-counter count="5"></click-counter>
-    </div>
-   </div>
-   </div> 
-    
+<!--  
+ <div class="row">
+  <div class="col-md-4"><left-panel id='left-panel' class='left-panel'></left-panel></div>
+  <div class="col-md-8"><character-element id='character-element' class='navbar navbar-fixed-top character-element'></character-element></div>
+ </div> 
+-->  
+<left-panel id='left-panel' class='left-panel'></left-panel>
+<character-element id='character-element' class='navbar navbar-fixed-top character-element'></character-element>
+   
    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
    <script
     src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>

@@ -1,23 +1,20 @@
 import 'package:polymer/polymer.dart';
+import 'dart:html';
 import 'dart:async';
+import 'dart:math';
 import "package:js/js.dart" as js;
 import "package:jsonp/jsonp.dart" as jsonp;
 import 'events/startevent.dart' as startevent;
 import 'domains.dart';
+import 'characterelement.dart';
 
 @CustomTag('left-panel')
 class LeftPanel extends PolymerElement {
-  @published int count = 0;
-//  List<Character> characterarr;
-  
-  final List fruits = toObservable(['apples', 'pears', 'bananas']);
-//  @observable List<Character> charaterarr;
+
    List charaterarr = toObservable(new List<Character>());
   
-
   LeftPanel.created() : super.created() {
-    
-    print("Start left");
+
     Future<js.Proxy> result = jsonp.fetch(
         
         uri: "http://79.125.21.225:3090/get_characters?number=50&orient=portrait&callback=?"
@@ -26,10 +23,8 @@ class LeftPanel extends PolymerElement {
     
     result.then((js.Proxy proxy) {
       
-//      print("Donloaded");
       startevent.start();
-      
-//      querySelector('#bigspinner').style.display="none";
+
       display(proxy,charaterarr );
       
       
@@ -38,18 +33,12 @@ class LeftPanel extends PolymerElement {
     
   }
 
-//  void increment() {
-//    count++;
-//  }
-  
   void display(var data,List characterarr) {
-    
-//    characterarr =  new List<Character>();
-       
+           
     for (var i=0;i < data.length;i++){
       
-      print("lslslsl");
       var character = new Character();
+      character.id = i;
       character.name = data[i].name;
       character.age = data[i].age;
       character.city = data[i].city;
@@ -60,9 +49,36 @@ class LeftPanel extends PolymerElement {
 
       characterarr.add(character);
       
+      var rng = new Random();
+      var rngint =rng.nextInt(characterarr.length);
+      Characterelement characterelement = querySelector('#character-element');
+      characterelement.character=charaterarr[rngint];
+      
+      
     }
 
   }
+  
+  void selectCharacter(Event e) {
+    
+    var sel = e.currentTarget as Element;
+    var id =  int.parse((e.currentTarget as Element).id);
+//    var old;
+//    var old =querySelector('#click-counter').getAttribute("count");
+//    querySelector('#click-counter').setAttribute("count","11");
+//    querySelector('#character-element').setAttribute("character",charaterarr[0]);
+//    querySelector('#character-element').setAttribute("name","test");
+    Characterelement characterelement = querySelector('#character-element');
+//    characterelement.name="test";
+    characterelement.character=charaterarr[id];
+    
+//    old="11";
+    
+//    print(old);
+    
+    
+  }
+  
   
 }
 

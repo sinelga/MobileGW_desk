@@ -13,7 +13,7 @@ class Chat{
 }
 
 class Character {
-  
+int id;  
 String name;
 String city;
 String img;
