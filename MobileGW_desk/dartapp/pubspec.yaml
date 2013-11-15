@@ -3,6 +3,8 @@ description: A sample Polymer application
 dependencies:
     polymer: any
     jsonp: any
+    js: any
+    uuid: any
 transformers:
 - polymer:
     entry_points: web/dartapp.html

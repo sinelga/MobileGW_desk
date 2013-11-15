@@ -3,17 +3,12 @@
     <style>
 
     </style>
-    <!--  
-    <div>
-      <button on-click="{{increment}}">Click me</button><br>
-      <span>(click count: {{count}})</span>
-    </div>
-    -->
+    <div class='redbg'>
     <template repeat="{{character in charaterarr}}">
- 
-     <div class='media' on-click="{{selectCharacter}}" id='{{ character.id}}'><img class='media-object pull-left itemimagea' src='{{ character.img}}' alt=''><div class='media-body'> <div class='media-heading'>{{ character.name}}</div></div>{{ character.age}}</div> 
+      
+     <div class='media' on-click="{{selectCharacter}}" id='{{ character.id}}'><img class='media-object pull-left itemimagea' src='{{character.img}}' alt=''><div class='media-body'> <div class='media-heading'>{{character.name}} {{character.age}}v</div></div>{{ character.city}}</div> 
     </template>  
-    
+    </div>
   </template>
   <script type="application/dart" src="leftpanel.dart"></script>
 </polymer-element>

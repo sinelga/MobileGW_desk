@@ -21,6 +21,7 @@ String moto;
 String age;
 String desc;
 String phone;
+
 }
 
 class MobileClient {

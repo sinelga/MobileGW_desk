@@ -1044,3 +1044,2013 @@ build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --
 
 build.dart finished [1135 ms]
 
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1293 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1152 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1147 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1320 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1152 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css --changed=web/dartapp.html
+
+build.dart finished [1166 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1194 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1138 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1125 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1239 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1126 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1156 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1172 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1141 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1164 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1192 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1166 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1164 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1134 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css --changed=web/leftpanel.html
+
+build.dart finished [1135 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1169 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1129 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1134 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1153 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1105 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1159 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1126 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1143 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1183 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1159 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1136 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1115 ms]
+
+---
+build.dart --machine --changed=web/events/startevent.dart
+
+build.dart finished [1148 ms]
+
+---
+build.dart --machine --changed=web/events/startevent.dart
+
+build.dart finished [1139 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1132 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1158 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1182 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1127 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1168 ms]
+
+---
+build.dart --machine --changed=web/events/startevent.dart
+
+build.dart finished [1146 ms]
+
+---
+build.dart --machine --changed=web/events/startevent.dart
+
+build.dart finished [1175 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1128 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1160 ms]
+
+---
+build.dart --machine --changed=web/events/startevent.dart
+
+build.dart finished [1144 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1135 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1137 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1146 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1144 ms]
+
+---
+build.dart --machine --changed=web/events/startevent.dart
+
+build.dart finished [1150 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1174 ms]
+
+---
+build.dart --machine --changed=web/events/startevent.dart
+
+build.dart finished [1165 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1201 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1173 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1183 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1158 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1170 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1183 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1194 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1119 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1193 ms]
+
+---
+build.dart --machine --changed=web/events/startevent.dart
+
+build.dart finished [1201 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1276 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1207 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1142 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1170 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1135 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1148 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1179 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1169 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1132 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1121 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1153 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1149 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1146 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1150 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1172 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1187 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1174 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1198 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1198 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1186 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1126 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1141 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1128 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1158 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1168 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1165 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1197 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1226 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml
+
+build.dart finished [1219 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1322 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1192 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1134 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1180 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1204 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1263 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html
+
+build.dart finished [1414 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1178 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1200 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1263 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1180 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1162 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1293 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"definition for Polymer element with tag name \"chat-element\" not found.","line":35,"charStart":1738,"charEnd":1752}}]
+build.dart finished [1190 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"definition for Polymer element with tag name \"chat-element\" not found.","line":35,"charStart":1738,"charEnd":1752}}]
+build.dart finished [1209 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1195 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1202 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1153 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1244 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1193 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1194 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1418 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1242 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1172 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1166 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1322 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1306 ms]
+
+---
+build.dart --machine --changed=web/domains.dart
+
+build.dart finished [1179 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1184 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1300 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1291 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1191 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart --changed=web/chatelement.dart
+
+build.dart finished [1198 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1147 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1169 ms]
+
+---
+build.dart --machine --changed=web/utils.dart
+
+build.dart finished [1222 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1166 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1246 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1155 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1147 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1156 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1210 ms]
+
+---
+build.dart --machine --changed=web/domains.dart
+
+build.dart finished [1162 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1216 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1187 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html --changed=web/leftpanel.dart
+
+build.dart finished [1190 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1180 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1203 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1201 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1195 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1202 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1190 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1177 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1207 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1198 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1186 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart --changed=web/chatelement.html
+
+build.dart finished [1206 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1201 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1149 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1155 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1180 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1156 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1179 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1184 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1200 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1155 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1174 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1202 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1166 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1216 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1180 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1178 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1188 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1153 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1229 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1157 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1164 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1222 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1165 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1169 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1156 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1226 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1154 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1167 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1237 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1166 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1390 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1204 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1183 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1210 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1215 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1177 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1160 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1213 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1214 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1190 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1181 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1198 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1271 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1187 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1181 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1384 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1213 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1199 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1183 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1167 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1184 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1406 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1208 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1151 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1204 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1180 ms]
+
+---
+build.dart --machine --changed=pubspec.yaml --changed=web/leftpanel.dart
+
+build.dart finished [1488 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [2340 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1268 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1250 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1212 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1248 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1279 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1242 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1241 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1224 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1238 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart --changed=web/chatelement.dart
+
+build.dart finished [1332 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1225 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1264 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1269 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1248 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart --changed=web/chatelement.html
+
+build.dart finished [1284 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1217 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1221 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1276 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1256 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1253 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1287 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1255 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1230 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1246 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1247 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1260 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1241 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1236 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1242 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1254 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1281 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1233 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1283 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1210 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1230 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1265 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1225 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1249 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1373 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1257 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1261 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1234 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1239 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1234 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1283 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1253 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1220 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1298 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1301 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1239 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1288 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html --changed=web/dartapp.css
+
+build.dart finished [1278 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1284 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1238 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1251 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart --changed=web/chatelement.html
+
+build.dart finished [1330 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1230 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1271 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1259 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1297 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1217 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1236 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1264 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1232 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1285 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1251 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1241 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1283 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1241 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [2817 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html --changed=web/dartapp.css
+
+build.dart finished [1296 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1309 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1282 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1244 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1227 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1232 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1250 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1250 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1289 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1304 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1394 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart --changed=web/chatelement.html
+
+build.dart finished [1270 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1248 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1250 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1248 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1260 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1238 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1296 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1395 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1230 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1244 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1225 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1339 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1249 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1301 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1222 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1226 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart --changed=web/chatelement.html
+
+build.dart finished [1292 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart --changed=web/chatelement.dart
+
+build.dart finished [1264 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1230 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1314 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [2584 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1791 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1414 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1544 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1948 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1430 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1420 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1453 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1386 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1451 ms]
+
+---
+build.dart --machine --changed=web/characterelement.html
+
+build.dart finished [1328 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1598 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1480 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [3682 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1505 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1397 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1642 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1364 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1437 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [3170 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1557 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1563 ms]
+
+---
+build.dart --machine --changed=web/chatelement.html
+
+build.dart finished [1453 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1566 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1544 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1440 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1365 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1510 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1785 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1865 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [2362 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1458 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1514 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1367 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1403 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1504 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1445 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1478 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1533 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1460 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1483 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1642 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1611 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [2103 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1346 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1492 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1377 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html --changed=web/leftpanel.html
+
+build.dart finished [1623 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1474 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1431 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1483 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [4446 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [4251 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1442 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1512 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1690 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1482 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1223 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1376 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1437 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1241 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1278 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1379 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.html
+
+build.dart finished [1266 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1275 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1384 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1321 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1262 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1330 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1317 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1347 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [3766 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [5289 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1443 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1315 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1365 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1367 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1291 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [8134 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [4185 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1384 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1970 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1341 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1786 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1450 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1439 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1835 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [7049 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1249 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1949 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1462 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1370 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1451 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1312 ms]
+
+---
+build.dart --machine --changed=web/dartapp.css
+
+build.dart finished [1288 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1363 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1311 ms]
+

@@ -1,0 +1,28 @@
+<polymer-element name="chat-element">
+  <template>
+    <style>
+  .marginetop20{
+    margin-top: 20px;
+    }
+    input:invalid {
+    color:red;
+}
+    </style>
+    
+    <button type="button" class="close" on-click="{{stopchat}}">&times;</button>
+    <div class="media"> <img class="media-object pull-left" src="{{m_avatarstr}}" alt=""><div class="media-body"><div class="media-heading">{{m_ask}} </div></div></div>
+    <div class="media"> <img class="media-object pull-left" src="{{f_avatarstr}}" alt=""><div class="media-body"><div class="media-heading">{{answer}} </div></div></div>
+    
+    
+     <div class="input-group {{visibilety}}">
+     
+      <input type="text" class="form-control marginetop20" value="{{inputvalue}}" placeholder="{{placeholderstr}}"  > 
+      <button on-click="{{chatContinue}}" class="btn btn-warning btn-lg chatbutton pull-right" type="button">Jatkaa!</button>
+          
+    </div>
+    
+        
+  </template>
+  <script type="application/dart" src="chatelement.dart"></script>
+</polymer-element>
+

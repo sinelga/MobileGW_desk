@@ -1,12 +1,20 @@
-<polymer-element name="character-element" apply-author-styles>
+<polymer-element name="character-element">
   <template>
     <style>
-
+    .marginetop10{
+    margin-top: 10px;
+    }
+    .marginetop20{
+    margin-top: 20px;
+    }
     </style>
     
-    <div class='navbar navbar-fixed-top character-element'><div class='media'><img class='media-object pull-left' src='{{ character.img}}' alt=''><div class='media-body'> <div class='media-heading'>{{ character.name}}</div></div></div></div>
-
-  
+    <div class='navbar navbar-fixed-top character-element'>
+    <div id='bigphone' class='bigphone'><i class="fa fa-phone"></i> {{character.phone}}</div>
+    <div class='media'>
+      <img class='media-object pull-left' src='{{character.img}}' alt=''><div class='media-body'> <div class='media-heading bigcharacternameage'>{{character.name}} {{character.age}}v</div><div pull-left>{{character.city}}<div class="input-group"><input type="text" class="form-control marginetop20" placeholder="{{placeholderstr}}" value="{{firstfrase}}"></div></div><button on-click="{{startchat}}" type="button" class="btn btn-warning btn-lg pull-left marginetop10">Quick CHATTI!</button></div>
+    </div>
+    </div>
     
   </template>
   <script type="application/dart" src="characterelement.dart"></script>
