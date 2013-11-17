@@ -32,11 +32,6 @@ class Chatelement extends PolymerElement {
     placeholderstr="";
     inputvalue="";
     _payable="NotMobile";
-//    Timer.run( () {
-//      
-//      print("queryAll: " + this.shadowRoot.querySelector('#input').toString());
-//      
-//    });
         
   }
   
@@ -56,31 +51,30 @@ class Chatelement extends PolymerElement {
   void chatContinue(){
     
     if (inputvalue.length > 0) {
-    
-    
-    m_ask = inputvalue;
-    inputvalue="";  
+        
+      m_ask = inputvalue;
+      inputvalue="";
+      placeholderstr="";
        
-  var urlstr = "http://79.125.25.179:8000/bot_answer/?uuid="+_uuid+"&phone="+character.phone+"&say="+Uri.encodeComponent(m_ask)+"&callback=?";
+      var urlstr = "http://79.125.25.179:8000/bot_answer/?uuid="+_uuid+"&phone="+character.phone+"&say="+Uri.encodeComponent(m_ask)+"&callback=?";
    
-    Future<js.Proxy> result = jsonp.fetch(
+      Future<js.Proxy> result = jsonp.fetch(
         uri: urlstr
-    );
+      );
     
-    result.then((js.Proxy proxy) {
+      result.then((js.Proxy proxy) {
 
-      f_answer = proxy["answer"];
-      visibilety="novisible";
-      waitAnswer();
+        f_answer = proxy["answer"];
+        visibilety="novisible";
+        waitAnswer();
       
-    });
+      });
     
     } else {
       
       placeholderstr = placeholderstr+"??";
     }
-    
-        
+            
   }
   
   void waitAnswer(){

@@ -528,6 +528,7 @@ LTs:function(a){var z
 if(J.xZ(J.q8(a.iV),0)===!0){z=a.iV
 a.Np=this.ct(a,C.QH,a.Np,z)
 a.iV=this.ct(a,C.xE,a.iV,"")
+a.Cz=this.ct(a,C.nS,a.Cz,"")
 J.oA(Z.Lt(null,C.xB.g(C.xB.g(C.xB.g("http://79.125.25.179:8000/bot_answer/?uuid=",$.na)+"&phone=",a.Hi.gNM())+"&say=",P.jW(C.yD,a.Np,!1))+"&callback=?",null),new R.iS(a))}else{z=J.VO(a.Cz,"??")
 a.Cz=this.ct(a,C.nS,a.Cz,z)}"278"},
 "+chatContinue:0:0":1,
