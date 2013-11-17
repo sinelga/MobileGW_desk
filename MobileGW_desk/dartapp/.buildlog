@@ -4374,3 +4374,8 @@ build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --
 
 build.dart finished [1213 ms]
 
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1286 ms]
+
