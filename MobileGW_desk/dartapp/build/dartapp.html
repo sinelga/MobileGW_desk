@@ -10,13 +10,12 @@
   <!--   <link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>--> 
     <link href="http://fonts.googleapis.com/css?family=Finger+Paint" rel="stylesheet" type="text/css">
     <title>Seksi Chatti</title>
-    <link rel="stylesheet" href="dartapp.css">
+    <link rel="stylesheet" href="/dartapp.css">
   
    <!-- <link rel="import" href="clickcounter.html"> --> 
+         
     
-     
-     
-     
+    
      
     <script src="dartapp.html_bootstrap.dart.js"></script>
     
@@ -25,11 +24,12 @@
   <template>
     <style>
 
+   
     </style>
     <div class="redbg">
     <template repeat="{{character in charaterarr}}">
       
-     <div class="media" on-click="{{selectCharacter}}" id="{{ character.id}}"><img class="media-object pull-left itemimagea" src="{{character.img}}" alt=""><div class="media-body"> <div class="media-heading">{{character.name}} {{character.age}}v</div></div>{{ character.city}}</div> 
+     <div class="media" on-click="{{selectCharacter}}" id="{{ character.id}}"><img class="media-object pull-left itemimage" src="{{character.img}}" alt=""><div class="media-body"> <div class="media-heading">{{character.name}} {{character.age}}v</div></div>{{ character.city}}</div> 
     </template>  
     </div>
   </template>
@@ -52,7 +52,7 @@
     
      <div class="input-group {{visibilety}}">
      
-      <input type="text" class="form-control marginetop20" value="{{inputvalue}}" placeholder="{{placeholderstr}}"> 
+      <input type="text" id="input" class="form-control marginetop20" value="{{inputvalue}}" placeholder="{{placeholderstr}}"> 
       <button on-click="{{chatContinue}}" class="btn btn-warning btn-lg chatbutton pull-right" type="button">Jatkaa!</button>
           
     </div>
@@ -69,6 +69,14 @@
     .marginetop20{
     margin-top: 20px;
     }
+    .uusipalvelu {
+    color: red;
+    }
+    .directnumber{
+      color: red;
+      font-size: 200%;
+      text-shadow: 3px 3px 3px #aaa; 
+    }
     </style>
     
     <div class="navbar navbar-fixed-top character-element">
@@ -76,7 +84,15 @@
     <div class="media">
       <img class="media-object pull-left" src="{{character.img}}" alt=""><div class="media-body"> <div class="media-heading bigcharacternameage">{{character.name}} {{character.age}}v</div><div pull-left="">{{character.city}}<div class="input-group"><input type="text" class="form-control marginetop20" placeholder="{{placeholderstr}}" value="{{firstfrase}}"></div></div><button on-click="{{startchat}}" type="button" class="btn btn-warning btn-lg pull-left marginetop10">Quick CHATTI!</button></div>
     </div>
+   <template if="{{payable}}">
+    <div class="uusipalvelu">Uusi palvelu!</div> 
+    <div>{{character.name}}: Suora puhelinnumero 
+      <button id="makepaymentClick" on-click="{{makepaymentClick}}" type="button" class="btn btn-warning btn-lg marginetop10">VAIN 1€!</button> <div class="directnumber">{{directnumber}}</div>
+      <div id="spinner"><i class="fa fa-spinner fa-spin fa-3x"></i>Odotta..</div>
+     </div>
+   </template>  
     </div>
+    
     
   </template>
   

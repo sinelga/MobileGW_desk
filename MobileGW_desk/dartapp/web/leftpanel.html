@@ -2,11 +2,12 @@
   <template>
     <style>
 
+   
     </style>
     <div class='redbg'>
     <template repeat="{{character in charaterarr}}">
       
-     <div class='media' on-click="{{selectCharacter}}" id='{{ character.id}}'><img class='media-object pull-left itemimagea' src='{{character.img}}' alt=''><div class='media-body'> <div class='media-heading'>{{character.name}} {{character.age}}v</div></div>{{ character.city}}</div> 
+     <div class='media' on-click="{{selectCharacter}}" id='{{ character.id}}'><img class='media-object pull-left itemimage' src='{{character.img}}' alt=''><div class='media-body'> <div class='media-heading'>{{character.name}} {{character.age}}v</div></div>{{ character.city}}</div> 
     </template>  
     </div>
   </template>

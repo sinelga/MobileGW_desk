@@ -10,6 +10,7 @@ import 'characterelement.dart';
 import 'chatelement.dart';
 import 'utils.dart';
 import 'package:uuid/uuid.dart';
+import 'payableCheck/payablecheck.dart' as payablecheck;
 
 
 int m_avatarint;
@@ -17,6 +18,9 @@ String m_avatarstr;
 int f_avatarint;
 String f_avatarstr;
 String uuid;
+String site;
+Characterelement characterelement;
+Chatelement chatelement;
 
 @CustomTag('left-panel')
 class LeftPanel extends PolymerElement {
@@ -27,6 +31,8 @@ class LeftPanel extends PolymerElement {
 
   LeftPanel.created() : super.created() {
     this.hidden = true;
+    site = document.domain;
+   
     Future<js.Proxy> result = jsonp.fetch(
         
         uri: "http://79.125.21.225:3090/get_characters?number=50&orient=portrait&callback=?"
@@ -54,7 +60,24 @@ class LeftPanel extends PolymerElement {
     Uuid uuidobj = new Uuid();
     uuid = uuidobj.v1();
     
+    characterelement = querySelector('#character-element');
+    chatelement = querySelector('#chat-element');
     
+    Future<String> ipCheckServ = new payablecheck.PayableCheck().check(site);
+    ipCheckServ.then((results) {
+      
+      if (results != "NotMobile"){
+        
+       characterelement.setPayable(true);
+       
+       document.body.nodes.add(new ScriptElement()..src =
+           "http://sinelga.mbgw.elisa.fi/serviceurl?id="+uuid+"&site="+site+"&resource=mobilephone&themes=adult");
+        
+      }
+      
+      
+    });
+        
            
     for (var i=0;i < data.length;i++){
       
@@ -75,9 +98,6 @@ class LeftPanel extends PolymerElement {
     
     var rng = new Random();
     var rngint =rng.nextInt(characterarr.length);
-    Characterelement characterelement = querySelector('#character-element');
-    Chatelement chatelement = querySelector('#chat-element');
-    
     
     var firstcharacter = new Character();
     firstcharacter.id = charaterarr[rngint].id;
@@ -102,18 +122,17 @@ class LeftPanel extends PolymerElement {
     
     characterelement.hidden=false;
     characterelement.setUp(uuid,chatelement);
-    
+        
+        
   }
   
   void selectCharacter(Event e) {
 
     var id =  int.parse((e.currentTarget as Element).id);
 
-    Characterelement characterelement = querySelector('#character-element');
     characterelement.placeholderstr ="Hei "+charaterarr[id].name+"!";
     characterelement.firstfrase ="";
-        
-    Chatelement chatelement = querySelector('#chat-element');
+    
     chatelement.m_avatarstr = m_avatarstr;
     f_avatarint = new RandomFromRange().getRandNum(25);
     f_avatarstr = "http://pyserv2.appspot.com/avatarsgirls/avatar" + f_avatarint.toString() + ".jpg";
@@ -122,9 +141,8 @@ class LeftPanel extends PolymerElement {
     characterelement.setUp(uuid,chatelement);
     characterselected = charaterarr[id];
     
-//    characterselected.img=characterselected.img.replaceFirst("w110shadow6", "w300shadow");
-    
     characterselected.img=characterselected.img.replaceFirst("w110shadow6_bff0000", "w300shadow");
+    characterelement.cleanUp();
     characterelement.character=characterselected;
     chatelement.character=charaterarr[id];
             

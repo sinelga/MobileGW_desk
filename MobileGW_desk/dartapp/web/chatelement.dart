@@ -23,6 +23,7 @@ class Chatelement extends PolymerElement {
   @published String visibilety;
   @published String inputvalue;
   @published String placeholderstr;
+  @published String _payable;
       
   bool get applyAuthorStyles => true;
   
@@ -30,6 +31,12 @@ class Chatelement extends PolymerElement {
     visibilety="novisible";
     placeholderstr="";
     inputvalue="";
+    _payable="NotMobile";
+//    Timer.run( () {
+//      
+//      print("queryAll: " + this.shadowRoot.querySelector('#input').toString());
+//      
+//    });
         
   }
   
@@ -37,6 +44,14 @@ class Chatelement extends PolymerElement {
     _uuid=uuid;
     
   }
+  
+  void setPayable(String payable){
+    
+    print("payable");
+    _payable=payable;
+    
+  }
+  
   
   void chatContinue(){
     
