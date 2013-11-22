@@ -13,26 +13,21 @@ library cipher.api;
 
 import "dart:typed_data";
 
-part "./src/factories.dart";
+part "./src/registry.dart";
 
 /// All cipher initialization parameters classes implement this.
 abstract class CipherParameters {
 }
 
-/// Factory function to create [BlockCipher]s. 
-typedef BlockCipher BlockCipherFactory();
-
 /// Block cipher engines are expected to conform to this interface. 
 abstract class BlockCipher {
   
-  /// Register an algorithm by its standard name.
-  static void register( String algorithmName, BlockCipherFactory creator ) 
-    => _registerBlockCipher(algorithmName,creator);
+  /// The [Registry] for [BlockCipher] algorithms
+  static final registry = new Registry<BlockCipher>();
 
   /// Create the cipher specified by the standard [algorithmName]. 
-  factory BlockCipher( String algorithmName ) 
-    => _createBlockCipher(algorithmName);
-  
+  factory BlockCipher( String algorithmName ) => registry.create(algorithmName);
+
   /// Get this cipher's standard algorithm name.
   String get algorithmName;
   
@@ -65,9 +60,6 @@ abstract class BlockCipher {
 
 }
 
-/// Factory function to create [ChainingBlockCipher]s. 
-typedef ChainingBlockCipher ChainingBlockCipherFactory(BlockCipher underlyingCipher);
-
 /** 
  * Chaining block cipher are expected to conform to this interface.
  * 
@@ -78,36 +70,31 @@ typedef ChainingBlockCipher ChainingBlockCipherFactory(BlockCipher underlyingCip
  * as described in [http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation].
  */
 abstract class ChainingBlockCipher implements BlockCipher {
-  
-  /// Register an algorithm by its standard name.
-  static void register( String algorithmName, ChainingBlockCipherFactory creator ) 
-    => _registerChainingBlockCipher(algorithmName,creator);
+
+  /// The [Registry] for [ChainingBlockCipher] algorithms
+  static final registry = new Registry<ChainingBlockCipher>();
 
   /**
-   *  Create the cipher specified by the standard [algorithmName] using the
-   *  provided [underlyingCipher]. 
+   * Create the chaining block cipher specified by the standard [algorithmName].
+   * 
+   * Standard algorithms can be chained using / as a separator. For example: you
+   * can ask for "AES/CBC". 
    */
-  factory ChainingBlockCipher( String algorithmName, BlockCipher underlyingCipher ) 
-    => _createChainingBlockCipher(algorithmName,underlyingCipher);
-
+  factory ChainingBlockCipher( String algorithmName ) => registry.create(algorithmName);
+  
   /// Get the underlying [BlockCipher] wrapped by this cipher.
   BlockCipher get underlyingCipher;
 
 }
 
-/// Factory function to create [StreamCipher]s. 
-typedef StreamCipher StreamCipherFactory();
-
 /// The interface stream ciphers conform to. 
 abstract class StreamCipher {
 
-  /// Register an algorithm by its standard name.
-  static void register( String algorithmName, StreamCipherFactory creator ) 
-    => _registerStreamCipher(algorithmName,creator);
+  /// The [Registry] for [StreamCipher] algorithms
+  static final registry = new Registry<StreamCipher>();
 
   /// Create the cipher specified by the standard [algorithmName]. 
-  factory StreamCipher( String algorithmName ) 
-    => _createStreamCipher(algorithmName);
+  factory StreamCipher( String algorithmName ) => registry.create(algorithmName);
 
   /// Get this cipher's standard algorithm name.
   String get algorithmName;
@@ -136,19 +123,14 @@ abstract class StreamCipher {
 
 }
 
-/// Factory function to create [Digest]s. 
-typedef Digest DigestFactory();
-
 /// The interface that a message digest conforms to.
 abstract class Digest {
 
-  /// Register an algorithm by its standard name.
-  static void register( String algorithmName, DigestFactory creator ) 
-    => _registerDigest(algorithmName,creator);
+  /// The [Registry] for [Digest] algorithms
+  static final registry = new Registry<Digest>();
 
   /// Create the digest specified by the standard [algorithmName].
-  factory Digest( String algorithmName ) 
-    => _createDigest(algorithmName);
+  factory Digest( String algorithmName ) => registry.create(algorithmName);
 
   /// Get this digest's standard algorithm name.
   String get algorithmName;
@@ -176,3 +158,70 @@ abstract class Digest {
 
 }
 
+/// The interface that a padding conforms to.
+abstract class Padding {
+
+  /// The [Registry] for [Padding] algorithms
+  static final registry = new Registry<Padding>();
+
+  /// Create the digest specified by the standard [algorithmName].
+  factory Padding( String algorithmName ) => registry.create(algorithmName);
+
+  /// Get this padding's standard algorithm name.
+  String get algorithmName;
+  
+  /// Initialise the padder. Normally, paddings don't need any init params.
+  void init( [CipherParameters params] );
+  
+  /**
+   * Add the pad bytes to the passed in block, returning the number of bytes 
+   * added.
+   *
+   * Note: this assumes that the last block of plain text is always passed to it 
+   * inside [data]. i.e. if [offset] is zero, indicating the entire block is to 
+   * be overwritten with padding the value of [data] should be the same as the 
+   * last block of plain text. The reason for this is that some modes such as 
+   * "trailing bit compliment" base the padding on the last byte of plain text.
+   */
+  int addPadding( Uint8List data, int offset );
+  
+  /// Get the number of pad bytes present in the block.
+  int padCount( Uint8List data );
+  
+}
+
+/**
+ * All padded block ciphers conform to this interface. 
+ * 
+ * A padded block cipher is a wrapper around a [BlockCipher] or a 
+ * [ChainingBlockCipher] that allows padding the last procesed block if it is 
+ * smaller than the [blockSize].
+ */
+abstract class PaddedBlockCipher implements ChainingBlockCipher {
+
+  /// The [Registry] for [PaddedBlockCipher] algorithms
+  static final registry = new Registry<PaddedBlockCipher>();
+
+  /**
+   * Create the padded block cipher specified by the standard [algorithmName].
+   * 
+   * Standard algorithms can be chained using / as a separator. For example: you
+   * can ask for "AES/CBC/PKCS7". 
+   */
+  factory PaddedBlockCipher( String algorithmName ) => registry.create(algorithmName);
+  
+  /// Get the underlying [Padding] used by this cipher.
+  Padding get padding;
+
+  /**
+   * Process the last block of data given by [inp] and starting at offset
+   * [inpOff] and pad it if necessary (i.e: if it is smaller than [blockSize]). 
+   * 
+   * The resulting cipher text is put in [out] beginning at position [outOff].
+   * 
+   * This method returns the total bytes processed (which is the same as the 
+   * block size of the algorithm).
+   */
+  int doFinal( Uint8List inp, int inpOff, Uint8List out, int outOff );
+
+}

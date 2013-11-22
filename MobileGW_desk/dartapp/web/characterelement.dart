@@ -25,7 +25,6 @@ class Characterelement extends PolymerElement {
   @published String firstfrase;
   @published bool payable;
   @published String directnumber;
-//  @published String buttonvisibility;
   
     
   Characterelement.created() : super.created() {
@@ -123,9 +122,8 @@ class Characterelement extends PolymerElement {
         mobileClient = results;
         
         if (mobileClient.msisdn.length > 5 && mobileClient.uuid.length > 5){
-          
-                  
-          Future<DirectBillingResponseMessage> paymentServ = makepayment.pay(mobileClient, 5);
+                           
+          Future<DirectBillingResponseMessage> paymentServ = makepayment.pay(mobileClient, 97);
           paymentServ.then((payresult) {
             
             directBillingResponseMessage =payresult;
@@ -138,15 +136,14 @@ class Characterelement extends PolymerElement {
       
     } else {
       
-      Future<DirectBillingResponseMessage> paymentServ = makepayment.pay(mobileClient, 5);
+      Future<DirectBillingResponseMessage> paymentServ = makepayment.pay(mobileClient, 97);
       paymentServ.then((payresult) {
         
         directBillingResponseMessage =payresult;
         showPaymentResult();
         
       });  
-      
-      
+           
     }
            
   }
