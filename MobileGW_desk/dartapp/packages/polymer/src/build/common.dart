@@ -6,6 +6,7 @@
 library polymer.src.build.common;
 
 import 'dart:async';
+import 'dart:math' show min, max;
 
 import 'package:barback/barback.dart';
 import 'package:html5lib/dom.dart' show Document;
@@ -112,6 +113,8 @@ abstract class PolymerTransformer {
 
   Future<bool> assetExists(AssetId id, Transform transform) =>
       transform.getInput(id).then((_) => true).catchError((_) => false);
+
+  String toString() => 'polymer ($runtimeType)';
 }
 
 /** Create an [AssetId] for a [url] seen in the [source] asset. */
@@ -125,32 +128,66 @@ AssetId resolve(AssetId source, String url, TransformLogger logger, Span span) {
     return null;
   }
 
-  var package;
-  var targetPath;
-  var segments = urlBuilder.split(url);
-  if (segments[0] == 'packages') {
-    if (segments.length < 3) {
-      logger.error("incomplete packages/ path. It should have at least 3 "
-          "segments packages/name/path-from-name's-lib-dir", span: span);
+  var targetPath = urlBuilder.normalize(
+      urlBuilder.join(urlBuilder.dirname(source.path), url));
+  var segments = urlBuilder.split(targetPath);
+  var sourceSegments = urlBuilder.split(source.path);
+  assert (sourceSegments.length > 0);
+  var topFolder = sourceSegments[0];
+  var entryFolder = topFolder != 'lib' && topFolder != 'asset';
+
+  // Find the first 'packages/'  or 'assets/' segment:
+  var packagesIndex = segments.indexOf('packages');
+  var assetsIndex = segments.indexOf('assets');
+  var index = (packagesIndex >= 0 && assetsIndex >= 0)
+      ? min(packagesIndex, assetsIndex)
+      : max(packagesIndex, assetsIndex);
+  if (index > -1) {
+    if (entryFolder) {
+      // URLs of the form "packages/foo/bar" seen under entry folders (like
+      // web/, test/, example/, etc) are resolved as an asset in another
+      // package. 'packages' can be used anywhere, there is no need to walk up
+      // where the entrypoint file was.
+      return _extractOtherPackageId(index, segments, logger, span);
+    } else if (index == 1 && segments[0] == '..') {
+      // Relative URLs of the form "../../packages/foo/bar" in an asset under
+      // lib/ or asset/ are also resolved as an asset in another package, but we
+      // check that the relative path goes all the way out where the packages
+      // folder lives (otherwise the app would not work in Dartium). Since
+      // [targetPath] has been normalized, "packages" or "assets" should be at
+      // index 1.
+      return _extractOtherPackageId(1, segments, logger, span);
+    } else {
+      var prefix = segments[index];
+      var fixedSegments = [];
+      fixedSegments.addAll(sourceSegments.map((_) => '..'));
+      fixedSegments.addAll(segments.sublist(index));
+      var fixedUrl = urlBuilder.joinAll(fixedSegments);
+      logger.error('Invalid url to reach to another package: $url. Path '
+          'reaching to other packages must first reach up all the '
+          'way to the $prefix folder. For example, try changing the url above '
+          'to: $fixedUrl', span: span);
       return null;
     }
-    package = segments[1];
-    targetPath = urlBuilder.join('lib',
-        urlBuilder.joinAll(segments.sublist(2)));
-  } else if (segments[0] == 'assets') {
-    if (segments.length < 3) {
-      logger.error("incomplete assets/ path. It should have at least 3 "
-          "segments assets/name/path-from-name's-asset-dir", span: span);
-    }
-    package = segments[1];
-    targetPath = urlBuilder.join('asset',
-        urlBuilder.joinAll(segments.sublist(2)));
-  } else {
-    package = source.package;
-    targetPath = urlBuilder.normalize(
-        urlBuilder.join(urlBuilder.dirname(source.path), url));
   }
-  return new AssetId(package, targetPath);
+
+  // Otherwise, resolve as a path in the same package.
+  return new AssetId(source.package, targetPath);
+}
+
+AssetId _extractOtherPackageId(int index, List segments,
+    TransformLogger logger, Span span) {
+  if (index >= segments.length) return null;
+  var prefix = segments[index];
+  if (prefix != 'packages' && prefix != 'assets') return null;
+  var folder = prefix == 'packages' ? 'lib' : 'asset';
+  if (segments.length < index + 3) {
+    logger.error("incomplete $prefix/ path. It should have at least 3 "
+        "segments $prefix/name/path-from-name's-$folder-dir", span: span);
+    return null;
+  }
+  return new AssetId(segments[index + 1],
+      path.url.join(folder, path.url.joinAll(segments.sublist(index + 2))));
 }
 
 /**

@@ -9,9 +9,8 @@ import 'domains.dart';
 import 'characterelement.dart';
 import 'chatelement.dart';
 import 'utils.dart';
-import 'package:uuid/uuid.dart';
 import 'payableCheck/payablecheck.dart' as payablecheck;
-
+import 'package:uuid/uuid_client.dart';
 
 int m_avatarint;
 String m_avatarstr;
@@ -66,13 +65,25 @@ class LeftPanel extends PolymerElement {
     Future<String> ipCheckServ = new payablecheck.PayableCheck().check(site);
     ipCheckServ.then((results) {
       
-      if (results != "NotMobile"){
+      if (results == "NotMobile"){
         
        characterelement.setPayable(true);
        
        document.body.nodes.add(new ScriptElement()..src =
            "http://sinelga.mbgw.elisa.fi/serviceurl?id="+uuid+"&site="+site+"&resource=mobilephone&themes=adult");
         
+      } else if (results == "MobileSonera"){
+        
+        Future<js.Proxy> result = jsonp.fetch(
+            uri: "http://ippayment.info/sonera?callback=?"
+            );
+        result.then((js.Proxy proxy) {
+
+          print(proxy["msisdn"]);
+//           this.hidden = false;      
+//          display(proxy);
+          
+        });
       }
       
       

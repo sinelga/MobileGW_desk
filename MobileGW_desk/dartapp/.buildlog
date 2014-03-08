@@ -4484,3 +4484,423 @@ build.dart --machine --changed=build/dartapp.html
 
 build.dart finished [1239 ms]
 
+---
+build.dart --machine --full
+
+build.dart finished [4280 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [7669 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [3260 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [2441 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [5355 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1876 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1573 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1596 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [2446 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [4928 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1656 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1907 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1943 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [2369 ms]
+
+---
+build.dart --machine --clean
+
+build.dart finished [1425 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1481 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1486 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1910 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1495 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1883 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1747 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html_bootstrap.dart.js --changed=build/dartapp.html_bootstrap.dart...
+
+build.dart finished [1709 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1454 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1469 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1579 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1981 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1595 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1562 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1543 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1579 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1585 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1479 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1551 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [2025 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1557 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [2992 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1787 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1915 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html_bootstrap.dart.js --changed=build...
+
+build.dart finished [1596 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1578 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1671 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html_bootstrap.dart.js --changed=build...
+
+build.dart finished [1462 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1481 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1489 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1468 ms]
+
+---
+build.dart --machine --changed=build/dartapp.html
+
+build.dart finished [1889 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1959 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1529 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [2603 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [2096 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1422 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1942 ms]
+
+---
+build.dart --machine --changed=build/dartapp.css --changed=build/dartapp.html --changed=build/dartapp.html_boot...
+
+build.dart finished [1476 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1629 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [2547 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1423 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1427 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1464 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [15894 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [4987 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [6329 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [4225 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [3111 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1562 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1562 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1546 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1567 ms]
+
+---
+build.dart --machine --changed=web/payableCheck/payablecheck.dart
+
+build.dart finished [1581 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1528 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1592 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1554 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1576 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1539 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1546 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1569 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1550 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1573 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1560 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [3285 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1573 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1608 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1622 ms]
+
+---
+build.dart --machine --removed=build/dartapp.css --removed=build/dartapp.html --removed=build/dartapp.html_boot...
+
+build.dart finished [1784 ms]
+
+---
+build.dart --machine --changed=build/web/dartapp.css --changed=build/web/dartapp.html --changed=build/web/darta...
+
+build.dart finished [4240 ms]
+

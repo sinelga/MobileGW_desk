@@ -21,8 +21,6 @@ import 'package:source_maps/span.dart';
 import 'common.dart';
 import 'utils.dart';
 
-typedef String MessageFormatter(String kind, String message, Span span);
-
 /**
  * A linter that checks for common Polymer errors and produces warnings to
  * show on the editor or the command line. Leaves sources unchanged, but creates
@@ -34,24 +32,19 @@ class Linter extends Transformer with PolymerTransformer {
   /** Only run on .html files. */
   final String allowedExtensions = '.html';
 
-  final MessageFormatter _formatter;
-
-  Linter(this.options, [this._formatter]);
+  Linter(this.options);
 
   Future apply(Transform transform) {
-    var wrapper = new _LoggerInterceptor(transform, _formatter);
     var seen = new Set<AssetId>();
     var primary = transform.primaryInput;
     var id = primary.id;
-    wrapper.addOutput(primary); // this phase is analysis only
+    transform.addOutput(primary); // this phase is analysis only
     seen.add(id);
-    return readPrimaryAsHtml(wrapper).then((document) {
-      return _collectElements(document, id, wrapper, seen).then((elements) {
+    return readPrimaryAsHtml(transform).then((document) {
+      return _collectElements(document, id, transform, seen).then((elements) {
         bool isEntrypoint = options.isHtmlEntryPoint(id);
-        new _LinterVisitor(wrapper, elements, isEntrypoint).run(document);
-        var messagesId = id.addExtension('.messages');
-        wrapper.addOutput(new Asset.fromString(messagesId,
-            wrapper._messages.join('\n')));
+        new _LinterVisitor(transform.logger, elements, isEntrypoint)
+            .run(document);
       });
     });
   }
@@ -129,70 +122,6 @@ class Linter extends Transformer with PolymerTransformer {
   }
 }
 
-/** A proxy of [Transform] that returns a different logger. */
-// TODO(sigmund): get rid of this when barback supports a better way to log
-// messages without printing them.
-class _LoggerInterceptor implements Transform, TransformLogger {
-  final Transform _original;
-  final List<String> _messages = [];
-  final MessageFormatter _formatter;
-
-  _LoggerInterceptor(this._original, MessageFormatter formatter)
-      : _formatter = formatter == null ? consoleFormatter : formatter;
-
-  TransformLogger get logger => this;
-
-  noSuchMethod(Invocation m) => reflect(_original).delegate(m);
-
-  // form TransformLogger:
-  void warning(String message, {AssetId asset, Span span})
-      => _write('warning', message, span);
-
-  void error(String message, {AssetId asset, Span span})
-      => _write('error', message, span);
-
-  void _write(String kind, String message, Span span) {
-    _messages.add(_formatter(kind, message, span));
-  }
-}
-
-/**
- * Formatter that generates messages using a format that can be parsed
- * by tools, such as the Dart Editor, for reporting error messages.
- */
-String jsonFormatter(String kind, String message, Span span) {
-  return JSON.encode((span == null)
-      ? [{'method': 'warning', 'params': {'message': message}}]
-      : [{'method': kind,
-          'params': {
-            'file': span.sourceUrl,
-            'message': message,
-            'line': span.start.line + 1,
-            'charStart': span.start.offset,
-            'charEnd': span.end.offset,
-          }}]);
-}
-
-/**
- * Formatter that generates messages that are easy to read on the console (used
- * by default).
- */
-String consoleFormatter(String kind, String message, Span span) {
-  var useColors = stdioType(stdout) == StdioType.TERMINAL;
-  var levelColor = (kind == 'error') ? _RED_COLOR : _MAGENTA_COLOR;
-  var output = new StringBuffer();
-  if (useColors) output.write(levelColor);
-  output..write(kind)..write(' ');
-  if (useColors) output.write(_NO_COLOR);
-  if (span == null) {
-    output.write(message);
-  } else {
-    output.write(span.getLocationMessage(message,
-          useColors: useColors,
-          color: levelColor));
-  }
-  return output.toString();
-}
 
 /**
  * Information needed about other polymer-element tags in order to validate
@@ -220,7 +149,6 @@ class _ElementSummary {
 class _LinterVisitor extends TreeVisitor {
   TransformLogger _logger;
   bool _inPolymerElement = false;
-  bool _dartJSSeen = false;
   bool _dartTagSeen = false;
   bool _isEntrypoint;
   Map<String, _ElementSummary> _elements;
@@ -253,11 +181,6 @@ class _LinterVisitor extends TreeVisitor {
 
     if (_isEntrypoint && !_dartTagSeen) {
       _logger.error(USE_INIT_DART, span: doc.body.sourceSpan);
-    }
-
-    if (_isEntrypoint && !_dartJSSeen) {
-      // TODO(sigmund): remove this when webkitStartDart is gone.
-      _logger.error(USE_DART_JS, span: doc.body.sourceSpan);
     }
   }
 
@@ -374,11 +297,6 @@ class _LinterVisitor extends TreeVisitor {
       _logger.warning(BOOT_JS_DEPRECATED, span: node.sourceSpan);
       return;
     }
-    if (src == 'packages/browser/dart.js' ||
-        src == 'packages/unittest/test_controller.js') {
-      _dartJSSeen = true;
-      return;
-    }
 
     if (src.endsWith('.dart') && !isDart) {
       _logger.warning('Wrong script type, expected type="application/dart".',
@@ -406,7 +324,7 @@ class _LinterVisitor extends TreeVisitor {
   void _validateNormalElement(Element node) {
     // Event handlers only allowed inside polymer-elements
     node.attributes.forEach((name, value) {
-      if (name.startsWith('on')) {
+      if (name is String && name.startsWith('on')) {
         _validateEventHandler(node, name, value);
       }
     });
@@ -496,15 +414,6 @@ class _LinterVisitor extends TreeVisitor {
           span: node.attributeSpans[name]);
     }
 
-    var eventName = name.substring('on-'.length);
-    if (eventName.contains('-')) {
-      var newEvent = toCamelCase(eventName);
-      _logger.warning('Invalid event name "$name". After the "on-" the event '
-          'name should not use dashes. For example use "on-$newEvent" or '
-          '"on-${newEvent.toLowerCase()}" (both forms are equivalent in HTML).',
-          span: node.attributeSpans[name]);
-    }
-
     if (value.contains('.') || value.contains('(')) {
       _logger.warning('Invalid event handler body "$value". Declare a method '
           'in your custom element "void handlerName(event, detail, target)" '
@@ -537,20 +446,12 @@ bool _isCustomTag(String name) {
   return !_invalidTagNames.containsKey(name);
 }
 
-const String _RED_COLOR = '\u001b[31m';
-const String _MAGENTA_COLOR = '\u001b[35m';
-const String _NO_COLOR = '\u001b[0m';
-
 const String USE_INIT_DART =
-    'To run a polymer applications, you need to call "initPolymer". You can '
+    'To run a polymer application, you need to call "initPolymer". You can '
     'either include a generic script tag that does this for you:'
     '\'<script type="application/dart">export "package:polymer/init.dart";'
     '</script>\' or add your own script tag and call that function. '
     'Make sure the script tag is placed after all HTML imports.';
-
-const String USE_DART_JS =
-    'To run a polymer applications in Dartium, make sure to include'
-    '\'<script src="packages/browser/dart.js"></script>\' in your page';
 
 const String BOOT_JS_DEPRECATED =
     '"boot.js" is now deprecated. Instead, you can initialize your polymer '
