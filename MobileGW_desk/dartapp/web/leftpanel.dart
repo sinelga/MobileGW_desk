@@ -65,7 +65,7 @@ class LeftPanel extends PolymerElement {
     Future<String> ipCheckServ = new payablecheck.PayableCheck().check(site);
     ipCheckServ.then((results) {
       
-      if (results == "NotMobile"){
+      if (results == "ElisaMobile"){
         
        characterelement.setPayable(true);
        

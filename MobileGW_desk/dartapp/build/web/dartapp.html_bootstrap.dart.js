@@ -53202,7 +53202,7 @@ U0:{
 "^":"Tp:316;",
 call$1:[function(a){var z,y
 z=J.x(a)
-if(z.n(a,"NotMobile")){J.Ac($.Wv,!0)
+if(z.n(a,"ElisaMobile")){J.Ac($.Wv,!0)
 z=J.is(document.body)
 y=document.createElement("script",null)
 J.P2(y,C.xB.g(C.xB.g("http://sinelga.mbgw.elisa.fi/serviceurl?id=",$.De)+"&site=",$.an)+"&resource=mobilephone&themes=adult")

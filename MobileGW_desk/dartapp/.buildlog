@@ -4904,3 +4904,23 @@ build.dart --machine --changed=build/web/dartapp.css --changed=build/web/dartapp
 
 build.dart finished [4240 ms]
 
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1569 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1568 ms]
+
+---
+build.dart --machine --removed=build/web/dartapp.css --removed=build/web/dartapp.html --removed=build/web/darta...
+
+build.dart finished [1729 ms]
+
+---
+build.dart --machine --changed=build/web/dartapp.css --changed=build/web/dartapp.html --changed=build/web/darta...
+
+build.dart finished [4104 ms]
+
