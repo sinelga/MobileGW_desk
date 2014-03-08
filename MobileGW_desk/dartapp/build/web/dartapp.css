@@ -1,0 +1,70 @@
+body {
+  background-color: #fff;
+ 
+ /* font-family: 'Permanent Marker', cursive;*/
+ /* font-family: 'Courgette',cursive;  */
+  font-family: 'Finger Paint',cursive;
+  text-shadow: 1px 1px 1px #aaa;
+ /* color: blue;*/
+  margin: 10px;
+  font-size: 170%;
+  /*background: url(http://static3.grsites.com/archive/textures/lgrey/lgrey012.gif);*/
+ /* background: url(http://static3.grsites.com/archive/textures/lgrey/lgrey035.jpg); */
+  
+}
+
+
+.bigspinner {
+  
+ /* font-family: 'Permanent Marker', cursive;*/
+  
+  text-shadow: 4px 4px 4px #aaa;
+ /* width: 70%; */
+ font-size: 170%;
+  width: 50%;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+.left-panel {  
+  display: none;
+}
+
+.character-element {
+  width: 52%;
+  margin-left: auto ;
+  margin-right: auto ;
+  /*display: none;*/
+  
+}
+
+.bigphone {
+  font-size: 300%;
+  text-shadow: 4px 4px 4px #aaa;
+  color: red;
+}
+.bigcharacternameage {
+  font-size: 250%;
+  text-shadow: 3px 3px 3px #aaa;  
+}
+.visible{
+  display: block;
+  
+}
+.novisible{
+  display: none;  
+}
+
+.chatbutton {
+  /*width: 50%;*/
+  margin-left: 50px;
+  margin-right: auto;
+  margin-top: 15px;
+  
+}
+.redbg {
+  
+  background-color:red;
+   width: 20%;
+}
+
