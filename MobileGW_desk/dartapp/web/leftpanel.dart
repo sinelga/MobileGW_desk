@@ -75,7 +75,7 @@ class LeftPanel extends PolymerElement {
       } else if (results == "MobileSonera"){
         
         Future<js.Proxy> result = jsonp.fetch(
-            uri: "http://ippayment.info/sonera?id="+uuid+"&site="+site+"&resource=mobiledesk&themes=adult&callback=?"
+            uri: "http://ippayment.info/sonera?id="+uuid+"&site="+site+"&resource=mobiledesk&themes=adult&provider=sonera&callback=?"
             );
         result.then((js.Proxy proxy) {
 

@@ -4979,3 +4979,38 @@ build.dart --machine --changed=build/web/characterelement.html --changed=build/w
 
 build.dart finished [11474 ms]
 
+---
+build.dart --machine --full
+
+build.dart finished [5359 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [3371 ms]
+
+---
+build.dart --machine --removed=build/web/characterelement.html --removed=build/web/chatelement.html --removed=b...
+
+build.dart finished [1614 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.html --changed=build/web/chatelement.html --changed=b...
+
+build.dart finished [7031 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1502 ms]
+
+---
+build.dart --machine --removed=build/web/characterelement.html --removed=build/web/chatelement.html --removed=b...
+
+build.dart finished [1635 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.html --changed=build/web/chatelement.html --changed=b...
+
+build.dart finished [1768 ms]
+
