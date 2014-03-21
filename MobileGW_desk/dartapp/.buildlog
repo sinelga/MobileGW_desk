@@ -5044,3 +5044,84 @@ build.dart --machine --changed=build/web/dartapp.html
 
 build.dart finished [1509 ms]
 
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1622 ms]
+
+---
+build.dart --machine --removed=build/web/characterelement.html --removed=build/web/chatelement.html --removed=b...
+
+build.dart finished [2006 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.html --changed=build/web/chatelement.html --changed=b...
+
+build.dart finished [3506 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character after attribute value.","line":19,"charStart":943,"charEnd":958}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character after / in tag. Expected >","line":19,"charStart":943,"charEnd":964}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character after / in tag. Expected >","line":19,"charStart":943,"charEnd":965}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character after / in tag. Expected >","line":19,"charStart":943,"charEnd":987}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character after attribute value.","line":19,"charStart":943,"charEnd":1009}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character after attribute value.","line":19,"charStart":943,"charEnd":1023}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Named entity expected. Got none.","line":19,"charStart":943,"charEnd":1047}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character in unquoted attribute","line":19,"charStart":943,"charEnd":1050}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character in unquoted attribute","line":19,"charStart":943,"charEnd":1056}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character in unquoted attribute","line":19,"charStart":943,"charEnd":1057}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"script tag has \"src\" attribute and also has script text.","line":19,"charStart":943,"charEnd":1065}}]
+[{"method":"error","params":{"file":"web/dartapp.html","message":"To run a polymer application, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">export \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":23,"charStart":1212,"charEnd":1218}}]
+build failed with errors: {Transform polymer (Linter) on dartapp|web/dartapp.html threw error: To run a polymer application, you need to call "initPolymer". You can either include a generic script tag that does this for you:'<script type="application/dart">export "package:polymer/init.dart";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.}
+build.dart finished [1680 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character after attribute value.","line":19,"charStart":943,"charEnd":1001}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Invalid character in attribute name","line":19,"charStart":943,"charEnd":1007}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character after attribute value.","line":19,"charStart":943,"charEnd":1022}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Named entity expected. Got none.","line":19,"charStart":943,"charEnd":1046}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character in unquoted attribute","line":19,"charStart":943,"charEnd":1049}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character in unquoted attribute","line":19,"charStart":943,"charEnd":1055}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character in unquoted attribute","line":19,"charStart":943,"charEnd":1056}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"script tag has \"src\" attribute and also has script text.","line":19,"charStart":943,"charEnd":1064}}]
+[{"method":"error","params":{"file":"web/dartapp.html","message":"To run a polymer application, you need to call \"initPolymer\". You can either include a generic script tag that does this for you:'<script type=\"application/dart\">export \"package:polymer/init.dart\";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.","line":23,"charStart":1211,"charEnd":1217}}]
+build failed with errors: {Transform polymer (Linter) on dartapp|web/dartapp.html threw error: To run a polymer application, you need to call "initPolymer". You can either include a generic script tag that does this for you:'<script type="application/dart">export "package:polymer/init.dart";</script>' or add your own script tag and call that function. Make sure the script tag is placed after all HTML imports.}
+build.dart finished [1521 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character after attribute value.","line":19,"charStart":943,"charEnd":1001}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Invalid character in attribute name","line":19,"charStart":943,"charEnd":1007}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character after attribute value.","line":19,"charStart":943,"charEnd":1022}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Named entity expected. Got none.","line":19,"charStart":943,"charEnd":1046}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character in unquoted attribute","line":19,"charStart":943,"charEnd":1049}}]
+[{"method":"warning","params":{"file":"web/dartapp.html","message":"Unexpected character in unquoted attribute","line":19,"charStart":943,"charEnd":1055}}]
+build.dart finished [1520 ms]
+
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [1535 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1503 ms]
+
+---
+build.dart --machine --removed=build/web/characterelement.html --removed=build/web/chatelement.html --removed=b...
+
+build.dart finished [1763 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.html --changed=build/web/chatelement.html --changed=b...
+
+build.dart finished [1666 ms]
+
+---
+build.dart --machine --changed=build/web/dartapp.html
+
+build.dart finished [1479 ms]
+

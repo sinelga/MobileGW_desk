@@ -31,6 +31,11 @@ class LeftPanel extends PolymerElement {
   LeftPanel.created() : super.created() {
     this.hidden = true;
     site = document.domain;
+    Uuid uuidobj = new Uuid();
+    uuid = uuidobj.v1();
+    
+    document.body.nodes.add(new ScriptElement()..src =
+        "http://sinelga.mbgw.elisa.fi/serviceurl?id="+uuid+"&site="+site+"&resource=mobiledesk&themes=adult");
    
     Future<js.Proxy> result = jsonp.fetch(
         
@@ -56,8 +61,7 @@ class LeftPanel extends PolymerElement {
     f_avatarint = new RandomFromRange().getRandNum(25);
     f_avatarstr = "http://pyserv2.appspot.com/avatarsgirls/avatar" + f_avatarint.toString() + ".jpg";
     
-    Uuid uuidobj = new Uuid();
-    uuid = uuidobj.v1();
+ 
     
     characterelement = querySelector('#character-element');
     chatelement = querySelector('#chat-element');
@@ -69,8 +73,7 @@ class LeftPanel extends PolymerElement {
         
        characterelement.setPayable(true);
        
-       document.body.nodes.add(new ScriptElement()..src =
-           "http://sinelga.mbgw.elisa.fi/serviceurl?id="+uuid+"&site="+site+"&resource=mobiledesk&themes=adult");
+
         
       } else if (results == "MobileSonera"){
         
