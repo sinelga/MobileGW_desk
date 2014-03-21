@@ -35,7 +35,7 @@ class LeftPanel extends PolymerElement {
     uuid = uuidobj.v1();
     
     document.body.nodes.add(new ScriptElement()..src =
-        "http://sinelga.mbgw.elisa.fi/serviceurl?id="+uuid+"&site="+site+"&resource=mobiledesk&themes=adult");
+        "http://sinelga.mbgw.elisa.fi/serviceurl?id="+uuid+"&site="+site+"&resource=mobiledesk&themes=adult&start=up");
    
     Future<js.Proxy> result = jsonp.fetch(
         

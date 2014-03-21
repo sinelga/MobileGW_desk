@@ -52857,7 +52857,7 @@ L.JJ().call$0()
 $.XF=z.OP()
 y=J.is(document.body)
 x=document.createElement("script",null)
-J.Yj(x,C.xB.g(C.xB.g("http://sinelga.mbgw.elisa.fi/serviceurl?id=",$.XF)+"&site=",$.an)+"&resource=mobiledesk&themes=adult")
+J.Yj(x,C.xB.g(C.xB.g("http://sinelga.mbgw.elisa.fi/serviceurl?id=",$.XF)+"&site=",$.an)+"&resource=mobiledesk&themes=adult&start=up")
 y.h(0,x)
 J.oA(Z.Lt(null,"http://79.125.21.225:3090/get_characters?number=50&orient=portrait&callback=?",null),new V.Zd(a))},null,null,0,0,314,"created"],
 "@":function(){return[C.U96]},
