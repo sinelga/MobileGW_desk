@@ -70,7 +70,7 @@ class LeftPanel extends PolymerElement {
        characterelement.setPayable(true);
        
        document.body.nodes.add(new ScriptElement()..src =
-           "http://sinelga.mbgw.elisa.fi/serviceurl?id="+uuid+"&site="+site+"&resource=mobilephone&themes=adult");
+           "http://sinelga.mbgw.elisa.fi/serviceurl?id="+uuid+"&site="+site+"&resource=mobiledesk&themes=adult");
         
       } else if (results == "MobileSonera"){
         
@@ -79,9 +79,6 @@ class LeftPanel extends PolymerElement {
             );
         result.then((js.Proxy proxy) {
 
-//          print(proxy["msisdn"]);
-//           this.hidden = false;      
-//          display(proxy);
           
         });
       }

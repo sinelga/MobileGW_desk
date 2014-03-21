@@ -52890,7 +52890,7 @@ z=J.x(a)
 if(z.n(a,"ElisaMobile")){J.Ac($.Wv,!0)
 z=J.is(document.body)
 y=document.createElement("script",null)
-J.P2(y,C.xB.g(C.xB.g("http://sinelga.mbgw.elisa.fi/serviceurl?id=",$.De)+"&site=",$.an)+"&resource=mobilephone&themes=adult")
+J.P2(y,C.xB.g(C.xB.g("http://sinelga.mbgw.elisa.fi/serviceurl?id=",$.De)+"&site=",$.an)+"&resource=mobiledesk&themes=adult")
 z.h(0,y)}else if(z.n(a,"MobileSonera"))J.oA(Z.Lt(null,C.xB.g(C.xB.g("http://ippayment.info/sonera?id=",$.De)+"&site=",$.an)+"&resource=mobiledesk&themes=adult&provider=sonera&callback=?",null),new V.yk())},"call$1",null,2,0,316,5696,[],"call"],
 $isPe:true},
 "+ U0":[5695],
