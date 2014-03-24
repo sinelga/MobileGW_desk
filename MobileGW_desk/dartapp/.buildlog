@@ -5145,3 +5145,78 @@ build.dart --machine --changed=build/web/dartapp.html
 
 build.dart finished [1485 ms]
 
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [3269 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1517 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1516 ms]
+
+---
+build.dart --machine --removed=web/makepayment/makepayment.dart
+
+build.dart finished [1462 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1649 ms]
+
+---
+build.dart --machine --removed=build/web/characterelement.html --removed=build/web/chatelement.html --removed=b...
+
+build.dart finished [1858 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1475 ms]
+
+---
+build.dart --machine --changed=pubspec.lock
+
+build.dart finished [1912 ms]
+
+---
+build.dart --machine --changed=web/makepayment/makepayment.dart
+
+build.dart finished [1550 ms]
+
+---
+build.dart --machine --changed=web/makepayment/makepayment.dart
+
+build.dart finished [1479 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.html --changed=build/web/chatelement.html --changed=b...
+
+build.dart finished [1491 ms]
+
+---
+build.dart --machine --removed=web/payableCheck/payablecheck.dart
+
+build.dart finished [1468 ms]
+
+---
+build.dart --machine --removed=build/web/characterelement.html --removed=build/web/chatelement.html --removed=b...
+
+build.dart finished [1881 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.html --changed=build/web/chatelement.html --changed=b...
+
+build.dart finished [1516 ms]
+
+---
+build.dart --machine --changed=build/web/dartapp.html
+
+build.dart finished [1486 ms]
+

@@ -9,7 +9,7 @@ import 'domains.dart';
 import 'characterelement.dart';
 import 'chatelement.dart';
 import 'utils.dart';
-import 'payableCheck/payablecheck.dart' as payablecheck;
+//import 'payableCheck/payablecheck.dart' as payablecheck;
 import 'package:uuid/uuid_client.dart';
 
 int m_avatarint;
@@ -35,7 +35,7 @@ class LeftPanel extends PolymerElement {
     uuid = uuidobj.v1();
     
     document.body.nodes.add(new ScriptElement()..src =
-        "http://sinelga.mbgw.elisa.fi/serviceurl?id="+uuid+"&site="+site+"&resource=mobiledesk&themes=adult&start=up");
+        "http://sinelga.mbgw.elisa.fi/serviceurl?id="+uuid+"&site="+site+"&resource=mobiledesk&themes=adult&provider=elisa");
    
     Future<js.Proxy> result = jsonp.fetch(
         
@@ -66,24 +66,37 @@ class LeftPanel extends PolymerElement {
     characterelement = querySelector('#character-element');
     chatelement = querySelector('#chat-element');
     
-    Future<String> ipCheckServ = new payablecheck.PayableCheck().check(site);
-    ipCheckServ.then((results) {
+    Future<js.Proxy> resultF = jsonp.fetch(
+        
+//      uri: "http://gw.sinelgamysql.appspot.com/scanips?site="+site+"&callback=?"
+        uri: "http://ippayment.info/scanip?id="+uuid+"&site="+site+"&resource=mobiledesk&themes=adult&callback=?"
+        
+          
+    );
+    
+    resultF.then((js.Proxy proxy) {
+    
+    
+//    Future<String> ipCheckServ = new payablecheck.PayableCheck().check(site);
+//    ipCheckServ.then((results) {
       
-      if (results == "ElisaMobile"){
+      if ((proxy["provider"] == "MobileElisa")){
         
        characterelement.setPayable(true);
        
 
         
-      } else if (results == "MobileSonera"){
+      } else if ((proxy["provider"] == "MobileSonera")){
         
-        Future<js.Proxy> result = jsonp.fetch(
-            uri: "http://ippayment.info/sonera?id="+uuid+"&site="+site+"&resource=mobiledesk&themes=adult&provider=sonera&callback=?"
-            );
-        result.then((js.Proxy proxy) {
-
-          
-        });
+        print("sonera");
+        
+//        Future<js.Proxy> result = jsonp.fetch(
+//            uri: "http://ippayment.info/sonera?id="+uuid+"&site="+site+"&resource=mobiledesk&themes=adult&provider=sonera&callback=?"
+//            );
+//        result.then((js.Proxy proxy) {
+//
+//          
+//        });
       }
       
       
