@@ -5460,3 +5460,8 @@ build.dart --machine --changed=build/web/characterelement.dart --changed=build/w
 
 build.dart finished [1461 ms]
 
+---
+build.dart --machine --changed=build/web/dartapp.html
+
+build.dart finished [1489 ms]
+
