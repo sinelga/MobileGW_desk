@@ -5385,3 +5385,78 @@ build.dart --machine --changed=build/web/dartapp.html
 
 build.dart finished [1529 ms]
 
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1451 ms]
+
+---
+build.dart --machine --removed=build/web/characterelement.dart --removed=build/web/characterelement.html --remo...
+
+build.dart finished [1622 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.dart --changed=build/web/characterelement.html --chan...
+
+build.dart finished [1674 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1468 ms]
+
+---
+build.dart --machine --removed=build/web/characterelement.dart --removed=build/web/characterelement.html --remo...
+
+build.dart finished [1858 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.dart --changed=build/web/characterelement.html --chan...
+
+build.dart finished [1462 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1479 ms]
+
+---
+build.dart --machine --removed=build/web/characterelement.dart --removed=build/web/characterelement.html --remo...
+
+build.dart finished [1901 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.dart --changed=build/web/characterelement.html --chan...
+
+build.dart finished [1520 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1446 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1448 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.dart --changed=build/web/characterelement.html --chan...
+
+build.dart finished [1470 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1461 ms]
+
+---
+build.dart --machine --removed=build/web/characterelement.dart --removed=build/web/characterelement.html --remo...
+
+build.dart finished [1741 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.dart --changed=build/web/characterelement.html --chan...
+
+build.dart finished [1461 ms]
+
