@@ -5,8 +5,8 @@ import '../domains.dart';
 import "package:js/js.dart" as js;
 import "package:jsonp/jsonp.dart" as jsonp;
 
-@MirrorsUsed(targets: const[],override: '*')
-import 'dart:mirrors';
+//@MirrorsUsed(targets: const[],override: '*')
+//import 'dart:mirrors';
 
 Completer completer;
 MobileClient mobileClient;

@@ -5325,3 +5325,63 @@ build.dart --machine --changed=build/web/characterelement.dart --changed=build/w
 
 build.dart finished [1488 ms]
 
+---
+build.dart --machine --changed=build/web/dartapp.html
+
+build.dart finished [1473 ms]
+
+---
+build.dart --machine --changed=web/makepayment/makepayment.dart --changed=web/setpayment/setpayment.dart
+
+build.dart finished [1481 ms]
+
+---
+build.dart --machine --removed=build/web/characterelement.dart --removed=build/web/characterelement.html --remo...
+
+build.dart finished [1688 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.dart --changed=build/web/characterelement.html --chan...
+
+build.dart finished [1473 ms]
+
+---
+build.dart --machine --changed=web/chatelement.dart
+
+build.dart finished [1489 ms]
+
+---
+build.dart --machine --changed=web/characterelement.dart
+
+build.dart finished [1465 ms]
+
+---
+build.dart --machine --removed=build/web/characterelement.dart --removed=build/web/characterelement.html --remo...
+
+build.dart finished [1789 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.dart --changed=build/web/characterelement.html --chan...
+
+build.dart finished [1530 ms]
+
+---
+build.dart --machine --changed=web/leftpanel.dart
+
+build.dart finished [1520 ms]
+
+---
+build.dart --machine --removed=build/web/characterelement.dart --removed=build/web/characterelement.html --remo...
+
+build.dart finished [1859 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.dart --changed=build/web/characterelement.html --chan...
+
+build.dart finished [1601 ms]
+
+---
+build.dart --machine --changed=build/web/dartapp.html
+
+build.dart finished [1529 ms]
+

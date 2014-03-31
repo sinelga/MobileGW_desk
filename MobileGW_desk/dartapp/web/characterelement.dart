@@ -10,8 +10,8 @@ import "package:jsonp/jsonp.dart" as jsonp;
 import 'setpayment/setpayment.dart' as setpayment;
 import 'makepayment/makepayment.dart' as makepayment;
 
-@MirrorsUsed(targets: const[],override: '*')
-import 'dart:mirrors';
+//@MirrorsUsed(targets: const[],override: '*')
+//import 'dart:mirrors';
 
 Chatelement _chatelement;
 String _uuid;

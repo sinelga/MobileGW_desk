@@ -7,8 +7,8 @@ import 'dart:math';
 import "package:js/js.dart" as js;
 import "package:jsonp/jsonp.dart" as jsonp;
 
-@MirrorsUsed(targets: const[],override: '*')
-import 'dart:mirrors';
+//@MirrorsUsed(targets: const[],override: '*')
+//import 'dart:mirrors';
 
 var subscription;
 var stream;

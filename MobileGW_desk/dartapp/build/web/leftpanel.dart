@@ -11,8 +11,8 @@ import 'chatelement.dart';
 import 'utils.dart';
 import 'package:uuid/uuid_client.dart';
 
-@MirrorsUsed(targets: const[],override: '*')
-import 'dart:mirrors';
+//@MirrorsUsed(targets: const[],override: '*')
+//import 'dart:mirrors';
 
 
 
