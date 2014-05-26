@@ -5475,3 +5475,20 @@ build.dart --machine --full
 
 build.dart finished [3804 ms]
 
+---
+build.dart --machine --full
+Unable to open file: /home/juno/git/MobileGW_desk/MobileGW_desk/dartapp/packages/polymer/builder.dart'file:///home/juno/git/MobileGW_desk/MobileGW_desk/dartapp/build.dart': error: line 1 pos 1: library handler failed
+import 'package:polymer/builder.dart';
+^
+build.dart finished [25 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [961 ms]
+
+---
+build.dart --machine --full
+
+build.dart finished [1155 ms]
+
