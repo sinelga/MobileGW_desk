@@ -122,10 +122,10 @@ class Characterelement extends PolymerElement with ChangeNotifier  {
   void makepaymentClick() {
 
     if (_provider == "MobileElisa") {
-      
-       spinner.style.display = "inline";
-       buttonElement.style.display = "none";
-       
+
+      spinner.style.display = "inline";
+      buttonElement.style.display = "none";
+
 
       if (mobileClient == null) {
 
@@ -159,9 +159,9 @@ class Characterelement extends PolymerElement with ChangeNotifier  {
 
       }
     } else if (_provider == "MobileSonera") {
-      
+
       buttonElement.style.display = "none";
-      
+
       directnumber = getDirectNumber(mobileClient);
       showPaymentResult();
 

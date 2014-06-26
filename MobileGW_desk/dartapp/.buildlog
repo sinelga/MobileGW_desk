@@ -6104,3 +6104,18 @@ build.dart --machine --changed=web/characterelement.dart
 
 build.dart finished [1019 ms]
 
+---
+build.dart --machine --changed=web/dartapp.html
+
+build.dart finished [998 ms]
+
+---
+build.dart --machine --removed=build/web/characterelement.dart --removed=build/web/characterelement.html --remo...
+
+build.dart finished [1069 ms]
+
+---
+build.dart --machine --changed=build/web/characterelement.dart --changed=build/web/characterelement.html --chan...
+
+build.dart finished [1009 ms]
+
