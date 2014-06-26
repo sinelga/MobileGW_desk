@@ -1,4 +1,4 @@
-// Copyright (c) 2013, the Dart project authors.  Please see the AUTHORS file
+// Copyright (c) 2014, the Dart project authors.  Please see the AUTHORS file
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
@@ -24,12 +24,9 @@ import 'dart:html';
 import 'dart:svg' show SvgSvgElement;
 import 'package:observe/observe.dart';
 
-import 'src/binding_delegate.dart';
-import 'src/node_binding.dart';
+import 'src/mustache_tokens.dart';
 
-export 'src/binding_delegate.dart';
-export 'src/node_binding.dart' show NodeBinding;
-
+part 'src/binding_delegate.dart';
 part 'src/element.dart';
 part 'src/input_bindings.dart';
 part 'src/input_element.dart';
@@ -45,6 +42,8 @@ part 'src/text_area_element.dart';
 // two packages, but this is not easy when we are faking extension methods.
 // Since TemplateElement needs to override Node.bind, it seems like the
 // Node.bind layer must have some innate knowledge of TemplateBinding.
+// NOTE: I've heard NodeBind might become an internal API, which is all the more
+// reason to have it in this package.
 
 /**
  * Provides access to the data binding APIs for the [node]. For example:
@@ -136,6 +135,12 @@ NodeBindExtension nodeBindFallback(Node node) {
 bool _isAttributeTemplate(Element n) => n.attributes.containsKey('template') &&
     _SEMANTIC_TEMPLATE_TAGS.containsKey(n.localName);
 
+bool _isSvgTemplate(Element el) => el.tagName == 'template' &&
+    el.namespaceUri == 'http://www.w3.org/2000/svg';
+
+bool _isHtmlTemplate(Element el) => el.tagName == 'TEMPLATE' &&
+    el.namespaceUri == 'http://www.w3.org/1999/xhtml';
+
 /**
  * Returns true if this node is semantically a template.
  *
@@ -146,7 +151,18 @@ bool _isAttributeTemplate(Element n) => n.attributes.containsKey('template') &&
  * and COL), OPTION, and OPTGROUP.
  */
 bool isSemanticTemplate(Node n) => n is Element &&
-    (n.localName == 'template' || _isAttributeTemplate(n));
+    (_isHtmlTemplate(n) || _isAttributeTemplate(n) || _isSvgTemplate(n));
+
+/** Returns true if this is the staging document for a template. */
+bool isTemplateStagingDocument(Document d) => _isStagingDocument[d] == true;
+
+
+/**
+ * True to enable [NodeBindingExtension.bindings]. This can be used by tools
+ * such as UI builders to easily inspect live bindings. Defaults to false for
+ * performance reasons.
+ */
+bool enableBindingsReflection = false;
 
 // TODO(jmesserly): const set would be better
 const _SEMANTIC_TEMPLATE_TAGS = const {

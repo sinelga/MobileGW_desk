@@ -6,8 +6,8 @@ library barback.errors;
 
 import 'package:stack_trace/stack_trace.dart';
 
-import 'asset_id.dart';
-import 'transformer.dart';
+import 'asset/asset_id.dart';
+import 'transformer/wrapping_aggregate_transformer.dart';
 import 'utils.dart';
 
 /// Error thrown when an asset with [id] cannot be found.
@@ -115,23 +115,24 @@ abstract class _WrappedException implements BarbackException {
   final error;
   final Chain stackTrace;
 
-  _WrappedException(this.error, StackTrace stackTrace)
-      : this.stackTrace = stackTrace == null ? null :
-            new Chain.forTrace(stackTrace);
+  _WrappedException(error, StackTrace stackTrace)
+      : this.error = error,
+        this.stackTrace = _getChain(error, stackTrace);
 
   String get _message;
 
   String toString() {
     var result = "$_message: $error";
-
-    var stack = stackTrace;
-    if (stack == null && error is Error) stack = error.stackTrace;
-    if (stack != null) {
-      result = "$result\n${stackTrace.terse}";
-    }
-
+    if (stackTrace != null) result = "$result\n${stackTrace.terse}";
     return result;
   }
+}
+
+/// Returns the stack chain for [error] and [stackTrace].
+Chain _getChain(error, StackTrace stackTrace) {
+  if (error is Error && stackTrace == null) stackTrace = error.stackTrace;
+  if (stackTrace != null) return new Chain.forTrace(stackTrace);
+  return null;
 }
 
 /// Error wrapping an exception thrown by a transform.
@@ -166,12 +167,17 @@ class AssetLoadException extends _WrappedException {
 /// the transformer that is applied to it.
 class TransformInfo {
   /// The transformer that's run for this transform.
-  final Transformer transformer;
+  ///
+  /// This may be a [Transformer] or a [WrappingAggregateTransformer]. It may
+  /// also return additional types in the future.
+  final transformer;
 
   /// The id of this transform's primary asset.
   final AssetId primaryId;
 
-  TransformInfo(this.transformer, this.primaryId);
+  TransformInfo(transformer, this.primaryId)
+      : transformer = transformer is WrappingAggregateTransformer ?
+            transformer.transformer : transformer;
 
   bool operator==(other) =>
       other is TransformInfo &&

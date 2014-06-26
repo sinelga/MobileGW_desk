@@ -13,6 +13,7 @@ import "package:jsonp/jsonp.dart" as jsonp;
 var subscription;
 var stream;
 String _uuid;
+//String _provider;
 
 @CustomTag('chat-element')
 class Chatelement extends PolymerElement {
@@ -25,7 +26,8 @@ class Chatelement extends PolymerElement {
   @published String visibilety;
   @published String inputvalue;
   @published String placeholderstr;
-  @published String _payable;
+  @published bool payable;
+//  @published String provider;
       
   bool get applyAuthorStyles => true;
   
@@ -33,21 +35,25 @@ class Chatelement extends PolymerElement {
     visibilety="novisible";
     placeholderstr="";
     inputvalue="";
-    _payable="NotMobile";
+    payable=false;
+//    provider="";
         
   }
+  
+
   
   void setUp(String uuid){
     _uuid=uuid;
     
   }
   
-  void setPayable(String payable){
+  void setPayable(bool payable,String provider){
     
-    print("payable");
-    _payable=payable;
+    payable=payable;
     
   }
+  
+
   
   
   void chatContinue(){

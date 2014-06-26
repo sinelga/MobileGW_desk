@@ -8,20 +8,24 @@ part of template_binding;
 class _TextExtension extends NodeBindExtension {
   _TextExtension(Text node) : super._(node);
 
-  NodeBinding bind(String name, model, [String path]) {
+  Bindable bind(String name, value, {bool oneTime: false}) {
     // Dart note: 'text' instead of 'textContent' to match the DOM property.
     if (name != 'text') {
-      return super.bind(name, model, path);
+      return super.bind(name, value, oneTime: oneTime);
     }
-    unbind(name);
-    return bindings[name] = new _TextBinding(_node, model, path);
+    if (oneTime) {
+      _updateText(value);
+      return null;
+    }
+
+    _open(value, _updateText);
+    return _maybeUpdateBindings(name, value);
+  }
+
+  _updateText(value) {
+    _node.text = _sanitizeValue(value);
   }
 }
 
-class _TextBinding extends NodeBinding {
-  _TextBinding(node, model, path) : super(node, 'text', model, path);
-
-  void valueChanged(newValue) {
-    node.text = sanitizeBoundValue(newValue);
-  }
-}
+/** Called to sanitize the value before it is assigned into the property. */
+_sanitizeValue(value) => value == null ? '' : '$value';

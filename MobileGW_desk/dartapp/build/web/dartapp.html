@@ -1,26 +1,378 @@
-<!DOCTYPE html><html><head><script src="packages/shadow_dom/shadow_dom.min.js"></script>
-<script src="packages/custom_element/custom-elements.min.js"></script>
-<script src="packages/browser/interop.js"></script>
+<!DOCTYPE html><html><head><script src="packages/web_components/platform.concat.js"></script>
+<script src="packages/web_components/dart_support.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    
   <!--  <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'> --> 
   <!--   <link href='http://fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>--> 
-    <link href="http://fonts.googleapis.com/css?family=Finger+Paint" rel="stylesheet" type="text/css">
+    
     <title>Seksi Chatti</title>
-    <link rel="stylesheet" href="dartapp.css">
+    
  
          
     
     
     
     
-    <script type="application/dart" src="dartapp.html_bootstrap.dart"></script>
-    <script src="packages/browser/dart.js"></script>
+    
+    
   </head>
-  <body><polymer-element name="left-panel">
+  <body><link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"><link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet"><link href="http://fonts.googleapis.com/css?family=Finger+Paint" rel="stylesheet" type="text/css"><style>body {
+  background-color: #fff;
+ 
+ /* font-family: 'Permanent Marker', cursive;*/
+ /* font-family: 'Courgette',cursive;  */
+  font-family: 'Finger Paint',cursive;
+  text-shadow: 1px 1px 1px #aaa;
+ /* color: blue;*/
+  margin: 10px;
+  font-size: 170%;
+  /*background: url(http://static3.grsites.com/archive/textures/lgrey/lgrey012.gif);*/
+ /* background: url(http://static3.grsites.com/archive/textures/lgrey/lgrey035.jpg); */
+  
+}
+
+
+.bigspinner {
+  
+ /* font-family: 'Permanent Marker', cursive;*/
+  
+  text-shadow: 4px 4px 4px #aaa;
+ /* width: 70%; */
+ font-size: 170%;
+  width: 50%;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+.left-panel {  
+  display: none;
+}
+
+.character-element {
+  width: 52%;
+  margin-left: auto ;
+  margin-right: auto ;
+  /*display: none;*/
+  
+}
+
+.bigphone {
+  font-size: 300%;
+  text-shadow: 4px 4px 4px #aaa;
+  color: red;
+}
+.bigcharacternameage {
+  font-size: 250%;
+  text-shadow: 3px 3px 3px #aaa;  
+}
+.visible{
+  display: block;
+  
+}
+.novisible{
+  display: none;  
+}
+
+.chatbutton {
+  /*width: 50%;*/
+  margin-left: 50px;
+  margin-right: auto;
+  margin-top: 15px;
+  
+}
+.redbg {
+  
+  background-color:red;
+   width: 20%;
+}
+
+</style>
+
+
+
+<!-- unminfied for debugging:
+<link rel="import" href="src/js/polymer/layout.html">
+<script src="src/js/polymer/polymer.concat.js"></script>
+-->
+
+
+
+<style shim-shadowdom="">
+/*******************************
+          Flex Layout
+*******************************/
+
+html /deep/ [layout][horizontal], html /deep/ [layout][vertical] {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+html /deep/ [layout][horizontal][inline], html /deep/ [layout][vertical][inline] {
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+
+html /deep/ [layout][horizontal] {
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+html /deep/ [layout][horizontal][reverse] {
+  -ms-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+html /deep/ [layout][vertical] {
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+html /deep/ [layout][vertical][reverse] {
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+html /deep/ [layout][wrap] {
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+html /deep/ [layout][wrap-reverse] {
+  -ms-flex-wrap: wrap-reverse;
+  -webkit-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+html /deep/ [flex] {
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+html /deep/ [flex][auto] {
+  -ms-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+html /deep/ [flex][none] {
+  -ms-flex: none;
+  -webkit-flex: none;
+  flex: none;
+}
+
+html /deep/ [flex][one] {
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+html /deep/ [flex][two] {
+  -ms-flex: 2;
+  -webkit-flex: 2;
+  flex: 2;
+}
+
+html /deep/ [flex][three] {
+  -ms-flex: 3;
+  -webkit-flex: 3;
+  flex: 3;
+}
+
+html /deep/ [flex][four] {
+  -ms-flex: 4;
+  -webkit-flex: 4;
+  flex: 4;
+}
+
+html /deep/ [flex][five] {
+  -ms-flex: 5;
+  -webkit-flex: 5;
+  flex: 5;
+}
+
+html /deep/ [flex][six] {
+  -ms-flex: 6;
+  -webkit-flex: 6;
+  flex: 6;
+}
+
+html /deep/ [flex][seven] {
+  -ms-flex: 7;
+  -webkit-flex: 7;
+  flex: 7;
+}
+
+html /deep/ [flex][eight] {
+  -ms-flex: 8;
+  -webkit-flex: 8;
+  flex: 8;
+}
+
+html /deep/ [flex][nine] {
+  -ms-flex: 9;
+  -webkit-flex: 9;
+  flex: 9;
+}
+
+html /deep/ [flex][ten] {
+  -ms-flex: 10;
+  -webkit-flex: 10;
+  flex: 10;
+}
+
+html /deep/ [flex][eleven] {
+  -ms-flex: 11;
+  -webkit-flex: 11;
+  flex: 11;
+}
+
+html /deep/ [flex][twelve] {
+  -ms-flex: 12;
+  -webkit-flex: 12;
+  flex: 12;
+}
+
+/* alignment in cross axis */
+
+html /deep/ [layout][start] {
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+html /deep/ [layout][center] {
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+html /deep/ [layout][end] {
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+
+/* alignment in main axis */
+
+html /deep/ [layout][start-justified] {
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+html /deep/ [layout][center-justified] {
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+html /deep/ [layout][end-justified] {
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+html /deep/ [layout][around-justified] {
+  -ms-flex-pack: around;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+html /deep/ [layout][justified] {
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+/* self alignment */
+
+html /deep/ [self-start] {
+  -ms-align-self: flex-start;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+}
+
+html /deep/ [self-center] {
+  -ms-align-self: center;
+  -webkit-align-self: center;
+  align-self: center;
+}
+
+html /deep/ [self-end] {
+  -ms-align-self: flex-end;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+
+html /deep/ [self-stretch] {
+  -ms-align-self: stretch;
+  -webkit-align-self: stretch;
+  align-self: stretch;
+}
+
+/*******************************
+          Other Layout
+*******************************/
+
+html /deep/ [block] {
+  display: block;
+}
+
+/* ie support for hidden */
+html /deep/ [hidden] {
+  display: none !important;
+}
+
+html /deep/ [relative] {
+  position: relative;
+}
+
+html /deep/ [fit] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+body[fullbleed] {
+  margin: 0;
+  height: 100vh;
+}
+
+/*******************************
+            Other
+*******************************/
+
+html /deep/ [segment], html /deep/ segment {
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 1em 0.5em;
+  padding: 1em;
+  background-color: white;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px 5px 5px 5px;
+}
+
+</style><script src="packages/polymer/src/js/polymer/polymer.js"></script><script>
+// TODO(sigmund): remove this script tag (dartbug.com/19650). This empty
+// script tag is necessary to work around a bug in Chrome 36.
+</script><polymer-element name="left-panel">
   <template>
     <style>
 
@@ -36,7 +388,9 @@
   
 </polymer-element>
 
+
 <polymer-element name="chat-element">
+
   <template>
     <style>
   .marginetop20{
@@ -63,6 +417,7 @@
   </template>
   
 </polymer-element>
+
 
 <polymer-element name="character-element">
   <template>
@@ -91,7 +446,7 @@
    <template if="{{payable}}">
     <div class="uusipalvelu">Uusi palvelu!</div> 
     <div>{{character.name}}: Suora puhelinnumero 
-      <button id="makepaymentClick" on-click="{{makepaymentClick}}" type="button" class="btn btn-warning btn-lg marginetop10">VAIN 1€!</button> <div class="directnumber">{{directnumber}}</div>
+      <button id="makepaymentClick" on-click="{{makepaymentClick}}" type="button" class="btn btn-warning btn-lg marginetop10">VAIN 0.87€!</button> <div class="directnumber">{{directnumber}}</div>
       <div id="spinner"><i class="fa fa-spinner fa-spin fa-3x"></i>Odotta..</div>
      </div>
    </template>  
@@ -130,4 +485,4 @@
    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
   
 
-</body></html>
+<script type="application/dart" src="dartapp.html_bootstrap.dart"></script><script src="packages/browser/dart.js"></script></body></html>

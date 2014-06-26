@@ -1,3 +1,4 @@
+<link rel="import" href="packages/polymer/polymer.html">
 <polymer-element name="character-element">
   <template>
     <style>
@@ -25,7 +26,7 @@
    <template if="{{payable}}">
     <div class='uusipalvelu'>Uusi palvelu!</div> 
     <div>{{character.name}}: Suora puhelinnumero 
-      <button id='makepaymentClick' on-click="{{makepaymentClick}}" type="button" class="btn btn-warning btn-lg marginetop10" >VAIN 1&#8364;!</button> <div class='directnumber'>{{directnumber}}</div>
+      <button id='makepaymentClick' on-click="{{makepaymentClick}}" type="button" class="btn btn-warning btn-lg marginetop10" >VAIN 0.87&#8364;!</button> <div class='directnumber'>{{directnumber}}</div>
       <div id='spinner'><i  class="fa fa-spinner fa-spin fa-3x"></i>Odotta..</div>
      </div>
    </template>  

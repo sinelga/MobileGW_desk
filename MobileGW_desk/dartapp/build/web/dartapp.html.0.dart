@@ -1,2 +1,2 @@
-library web_dartapp_html_0;
+library dartapp.web.dartapp_html_0;
 export 'package:polymer/init.dart';

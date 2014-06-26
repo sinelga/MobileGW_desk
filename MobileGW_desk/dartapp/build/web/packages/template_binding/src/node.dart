@@ -7,47 +7,45 @@ part of template_binding;
 /** Extensions to the [Node] API. */
 class NodeBindExtension {
   final Node _node;
-  Map<String, NodeBinding> _bindings;
+
+  /**
+   * Gets the data bindings that are associated with this node, if any.
+   *
+   * This starts out null, and if [enableBindingsReflection] is enabled, calls
+   * to [bind] will initialize this field and the binding.
+   */
+  // Dart note: in JS this has a trailing underscore, meaning "private".
+  // But in dart if we made it _bindings, it wouldn't be accessible at all.
+  // It is unfortunately needed to implement Node.bind correctly.
+  Map<String, Bindable> bindings;
 
   NodeBindExtension._(this._node);
 
   /**
    * Binds the attribute [name] to the [path] of the [model].
    * Path is a String of accessors such as `foo.bar.baz`.
-   * Returns the `NodeBinding` instance.
+   * Returns the [Bindable] instance.
    */
-  NodeBinding bind(String name, model, [String path]) {
+  Bindable bind(String name, value, {bool oneTime: false}) {
+    // TODO(jmesserly): in Dart we could deliver an async error, which would
+    // have a similar affect but be reported as a test failure. Should we?
     window.console.error('Unhandled binding to Node: '
-        '$this $name $model $path');
-  }
-
-  /** Unbinds the attribute [name]. */
-  void unbind(String name) {
-    if (_bindings == null) return;
-    var binding = bindings.remove(name);
-    if (binding != null) binding.close();
-  }
-
-  /** Unbinds all bound attributes. */
-  void unbindAll() {
-    if (_bindings == null) return;
-    for (var binding in bindings.values.toList()) {
-      if (binding != null) binding.close();
-    }
-    _bindings = null;
-  }
-
-  // TODO(jmesserly): we should return a read-only wrapper here.
-  /** Gets the data bindings that are associated with this node. */
-  Map<String, NodeBinding> get bindings {
-    if (_bindings == null) _bindings = new LinkedHashMap<String, NodeBinding>();
-    return _bindings;
+        '$this $name $value $oneTime');
+    return null;
   }
 
   /**
+   * Called when all [bind] calls are finished for a given template expansion.
+   */
+  void bindFinished() {}
+
+  /**
    * Dispatch support so custom HtmlElement's can override these methods.
-   * A public method like [this.bind] should not call another public method such
-   * as [this.unbind]. Instead it should dispatch through [_self.unbind].
+   *
+   * A public method like [this.bind] should not call another public method.
+   *
+   * Instead it should dispatch through [_self] to give the "overridden" method
+   * a chance to intercept.
    */
   NodeBindExtension get _self => _node is NodeBindExtension ? _node : this;
 
@@ -57,6 +55,20 @@ class NodeBindExtension {
   TemplateInstance get templateInstance =>
       _templateInstance != null ? _templateInstance :
       (_node.parent != null ? nodeBind(_node.parent).templateInstance : null);
+
+  _open(Bindable bindable, callback(value)) =>
+      callback(bindable.open(callback));
+
+  Bindable _maybeUpdateBindings(String name, Bindable binding) {
+    return enableBindingsReflection ? _updateBindings(name, binding) : binding;
+  }
+
+  Bindable _updateBindings(String name, Bindable binding) {
+    if (bindings == null) bindings = {};
+    var old = bindings[name];
+    if (old != null) old.close();
+    return bindings[name] = binding;
+  }
 }
 
 
@@ -66,17 +78,19 @@ class TemplateInstance {
   // in cases where script has modified the template instance boundary.
 
   /** The first node of this template instantiation. */
-  final Node firstNode;
+  Node get firstNode => _firstNode;
 
   /**
    * The last node of this template instantiation.
    * This could be identical to [firstNode] if the template only expanded to a
    * single node.
    */
-  final Node lastNode;
+  Node get lastNode => _lastNode;
 
   /** The model used to instantiate the template. */
   final model;
 
-  TemplateInstance(this.firstNode, this.lastNode, this.model);
+  Node _firstNode, _lastNode;
+
+  TemplateInstance(this.model);
 }

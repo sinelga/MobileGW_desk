@@ -10,6 +10,7 @@ import 'visitor.dart';
 
 EmptyExpression empty() => const EmptyExpression();
 Literal literal(v) => new Literal(v);
+ListLiteral listLiteral(List<Expression> items) => new ListLiteral(items);
 MapLiteral mapLiteral(List<MapLiteralEntry> entries) => new MapLiteral(entries);
 MapLiteralEntry mapLiteralEntry(Literal key, Expression value) =>
     new MapLiteralEntry(key, value);
@@ -23,7 +24,9 @@ Index index(Expression e, Expression a) => new Index(e, a);
 Invoke invoke(Expression e, String m, List<Expression> a) =>
     new Invoke(e, m, a);
 InExpression inExpr(Expression l, Expression r) => new InExpression(l, r);
-
+AsExpression asExpr(Expression l, Expression r) => new AsExpression(l, r);
+TernaryOperator ternary(Expression c, Expression t, Expression f) =>
+    new TernaryOperator(c, t, f);
 
 class AstFactory {
   EmptyExpression empty() => const EmptyExpression();
@@ -46,6 +49,9 @@ class AstFactory {
   BinaryOperator binary(Expression l, String op, Expression r) =>
       new BinaryOperator(l, op, r);
 
+  TernaryOperator ternary(Expression c, Expression t, Expression f) =>
+      new TernaryOperator(c, t, f);
+
   Getter getter(Expression g, String n) => new Getter(g, n);
 
   Index index(Expression e, Expression a) => new Index(e, a);
@@ -54,12 +60,19 @@ class AstFactory {
       new Invoke(e, m, a);
 
   InExpression inExpr(Expression l, Expression r) => new InExpression(l, r);
+
+  AsExpression asExpr(Expression l, Expression r) => new AsExpression(l, r);
 }
 
 /// Base class for all expressions
 abstract class Expression {
   const Expression();
   accept(Visitor v);
+}
+
+abstract class HasIdentifier {
+  String get identifier;
+  Expression get expr;
 }
 
 class EmptyExpression extends Expression {
@@ -79,6 +92,20 @@ class Literal<T> extends Expression {
   bool operator ==(o) => o is Literal<T> && o.value == value;
 
   int get hashCode => value.hashCode;
+}
+
+class ListLiteral extends Expression {
+  final List<Expression> items;
+
+  ListLiteral(this.items);
+
+  accept(Visitor v) => v.visitListLiteral(this);
+
+  String toString() => "$items";
+
+  bool operator ==(o) => o is ListLiteral && _listEquals(o.items, items);
+
+  int get hashCode => _hashList(items);
 }
 
 class MapLiteral extends Expression {
@@ -173,17 +200,61 @@ class BinaryOperator extends Expression {
       right.hashCode);
 }
 
-class InExpression extends Expression {
-  final Expression left;
+class TernaryOperator extends Expression {
+  final Expression condition;
+  final Expression trueExpr;
+  final Expression falseExpr;
+
+  TernaryOperator(this.condition, this.trueExpr, this.falseExpr);
+
+  accept(Visitor v) => v.visitTernaryOperator(this);
+
+  String toString() => '($condition ? $trueExpr : $falseExpr)';
+
+  bool operator ==(o) => o is TernaryOperator
+      && o.condition == condition
+      && o.trueExpr == trueExpr
+      && o.falseExpr == falseExpr;
+
+  int get hashCode => _JenkinsSmiHash.hash3(condition.hashCode,
+      trueExpr.hashCode, falseExpr.hashCode);
+}
+
+class InExpression extends Expression implements HasIdentifier {
+  final Identifier left;
   final Expression right;
 
   InExpression(this.left, this.right);
 
   accept(Visitor v) => v.visitInExpression(this);
 
+  String get identifier => left.value;
+
+  Expression get expr => right;
+
   String toString() => '($left in $right)';
 
   bool operator ==(o) => o is InExpression && o.left == left
+      && o.right == right;
+
+  int get hashCode => _JenkinsSmiHash.hash2(left.hashCode, right.hashCode);
+}
+
+class AsExpression extends Expression implements HasIdentifier {
+  final Expression left;
+  final Identifier right;
+
+  AsExpression(this.left, this.right);
+
+  accept(Visitor v) => v.visitAsExpression(this);
+
+  String get identifier => right.value;
+
+  Expression get expr => left;
+
+  String toString() => '($left as $right)';
+
+  bool operator ==(o) => o is AsExpression && o.left == left
       && o.right == right;
 
   int get hashCode => _JenkinsSmiHash.hash2(left.hashCode, right.hashCode);

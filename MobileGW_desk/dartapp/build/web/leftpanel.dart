@@ -11,10 +11,6 @@ import 'chatelement.dart';
 import 'utils.dart';
 import 'package:uuid/uuid_client.dart';
 
-//@MirrorsUsed(targets: const[],override: '*')
-//import 'dart:mirrors';
-
-
 
 int m_avatarint;
 String m_avatarstr;
@@ -24,6 +20,7 @@ String uuid;
 String site;
 Characterelement characterelement;
 Chatelement chatelement;
+String provider;
 
 @CustomTag('left-panel')
 class LeftPanel extends PolymerElement {
@@ -73,19 +70,23 @@ class LeftPanel extends PolymerElement {
     Future<js.Proxy> resultF = jsonp.fetch(
 
         uri: "http://ippayment.info/scanip?id="+uuid+"&site="+site+"&resource=mobiledesk&themes=adult&callback=?"
-        
-          
+                 
     );
     
     resultF.then((js.Proxy proxy) {
       
-      if ((proxy["provider"] == "MobileElisa")){
+      provider = proxy["provider"];
+      
+      if (provider == "MobileElisa"){
         
        characterelement.setPayable(true);
+       characterelement.setProvider(provider);
         
-      } else if ((proxy["provider"] == "MobileSonera")){
+      } else if (provider == "MobileSonera"){
+
+        characterelement.setPayable(true);
+        characterelement.setProvider(provider);
         
-        print("sonera "+proxy["msisdn"]);
         
       }
       

@@ -13,6 +13,7 @@ import "package:jsonp/jsonp.dart" as jsonp;
 var subscription;
 var stream;
 String _uuid;
+//String _provider;
 
 @CustomTag('chat-element')
 class Chatelement extends PolymerElement with ChangeNotifier  {
@@ -25,7 +26,8 @@ class Chatelement extends PolymerElement with ChangeNotifier  {
   @reflectable @published String get visibilety => __$visibilety; String __$visibilety; @reflectable set visibilety(String value) { __$visibilety = notifyPropertyChange(#visibilety, __$visibilety, value); }
   @reflectable @published String get inputvalue => __$inputvalue; String __$inputvalue; @reflectable set inputvalue(String value) { __$inputvalue = notifyPropertyChange(#inputvalue, __$inputvalue, value); }
   @reflectable @published String get placeholderstr => __$placeholderstr; String __$placeholderstr; @reflectable set placeholderstr(String value) { __$placeholderstr = notifyPropertyChange(#placeholderstr, __$placeholderstr, value); }
-  @published String _payable;
+  @reflectable @published bool get payable => __$payable; bool __$payable; @reflectable set payable(bool value) { __$payable = notifyPropertyChange(#payable, __$payable, value); }
+//  @published String provider;
       
   bool get applyAuthorStyles => true;
   
@@ -33,21 +35,25 @@ class Chatelement extends PolymerElement with ChangeNotifier  {
     visibilety="novisible";
     placeholderstr="";
     inputvalue="";
-    _payable="NotMobile";
+    payable=false;
+//    provider="";
         
   }
+  
+
   
   void setUp(String uuid){
     _uuid=uuid;
     
   }
   
-  void setPayable(String payable){
+  void setPayable(bool payable,String provider){
     
-    print("payable");
-    _payable=payable;
+    payable=payable;
     
   }
+  
+
   
   
   void chatContinue(){

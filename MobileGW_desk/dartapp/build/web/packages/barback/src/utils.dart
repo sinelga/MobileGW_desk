@@ -94,6 +94,25 @@ String byteToHex(int byte) {
   return DIGITS[(byte ~/ 16) % 16] + DIGITS[byte % 16];
 }
 
+/// Returns a sentence fragment listing the elements of [iter].
+///
+/// This converts each element of [iter] to a string and separates them with
+/// commas and/or "and" where appropriate.
+String toSentence(Iterable iter) {
+  if (iter.length == 1) return iter.first.toString();
+  return iter.take(iter.length - 1).join(", ") + " and ${iter.last}";
+}
+
+/// Returns [name] if [number] is 1, or the plural of [name] otherwise.
+///
+/// By default, this just adds "s" to the end of [name] to get the plural. If
+/// [plural] is passed, that's used instead.
+String pluralize(String name, int number, {String plural}) {
+  if (number == 1) return name;
+  if (plural != null) return plural;
+  return '${name}s';
+}
+
 /// Converts [input] into a [Uint8List].
 ///
 /// If [input] is a [TypedData], this just returns a view on [input].
@@ -287,5 +306,22 @@ Stream callbackStream(Stream callback()) {
       onPause: () => subscription.pause(),
       onResume: () => subscription.resume(),
       sync: true);
+  return controller.stream;
+}
+
+/// Creates a single-subscription stream from a broadcast stream.
+///
+/// The returned stream will enqueue events from [broadcast] until a listener is
+/// attached, then pipe events to that listener.
+Stream broadcastToSingleSubscription(Stream broadcast) {
+  if (!broadcast.isBroadcast) return broadcast;
+
+  // TODO(nweiz): Implement this using a transformer when issues 18588 and 18586
+  // are fixed.
+  var subscription;
+  var controller = new StreamController(onCancel: () => subscription.cancel());
+  subscription = broadcast.listen(controller.add,
+      onError: controller.addError,
+      onDone: controller.close);
   return controller.stream;
 }

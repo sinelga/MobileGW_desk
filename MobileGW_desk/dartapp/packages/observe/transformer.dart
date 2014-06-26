@@ -2,15 +2,13 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-/**
- * Code transform for @observable. The core transformation is relatively
- * straightforward, and essentially like an editor refactoring.
- */
+/// Code transform for @observable. The core transformation is relatively
+/// straightforward, and essentially like an editor refactoring.
 library observe.transformer;
 
 import 'dart:async';
 
-import 'package:analyzer/src/generated/java_core.dart' show CharSequence;
+import 'package:analyzer/analyzer.dart';
 import 'package:analyzer/src/generated/ast.dart';
 import 'package:analyzer/src/generated/error.dart';
 import 'package:analyzer/src/generated/parser.dart';
@@ -19,17 +17,15 @@ import 'package:barback/barback.dart';
 import 'package:source_maps/refactor.dart';
 import 'package:source_maps/span.dart' show SourceFile;
 
-/**
- * A [Transformer] that replaces observables based on dirty-checking with an
- * implementation based on change notifications.
- *
- * The transformation adds hooks for field setters and notifies the observation
- * system of the change.
- */
+/// A [Transformer] that replaces observables based on dirty-checking with an
+/// implementation based on change notifications.
+///
+/// The transformation adds hooks for field setters and notifies the observation
+/// system of the change.
 class ObservableTransformer extends Transformer {
 
   final List<String> _files;
-  ObservableTransformer() : _files = null;
+  ObservableTransformer([List<String> files]) : _files = files;
   ObservableTransformer.asPlugin(BarbackSettings settings)
       : _files = _readFiles(settings.configuration['files']);
 
@@ -50,6 +46,8 @@ class ObservableTransformer extends Transformer {
     return files;
   }
 
+  // TODO(nweiz): This should just take an AssetId when barback <0.13.0 support
+  // is dropped.
   Future<bool> isPrimary(idOrAsset) {
     var id = idOrAsset is AssetId ? idOrAsset : idOrAsset.id;
     return new Future.value(id.extension == '.dart' &&
@@ -58,8 +56,10 @@ class ObservableTransformer extends Transformer {
 
   Future apply(Transform transform) {
     return transform.primaryInput.readAsString().then((content) {
+      // Do a quick string check to determine if this is this file even
+      // plausibly might need to be transformed. If not, we can avoid an
+      // expensive parse.
       if (!content.contains("@observable") && !content.contains("@published")) {
-        transform.addOutput(transform.primaryInput);
         return;
       }
 
@@ -85,7 +85,7 @@ class ObservableTransformer extends Transformer {
 
 TextEditTransaction _transformCompilationUnit(
     String inputCode, SourceFile sourceFile, TransformLogger logger) {
-  var unit = _parseCompilationUnit(inputCode);
+  var unit = parseCompilationUnit(inputCode, suppressErrors: true);
   var code = new TextEditTransaction(inputCode, sourceFile);
   for (var directive in unit.directives) {
     if (directive is LibraryDirective && _hasObservable(directive)) {
@@ -110,24 +110,9 @@ TextEditTransaction _transformCompilationUnit(
   return code;
 }
 
-/** Parse [code] using analyzer. */
-CompilationUnit _parseCompilationUnit(String code) {
-  var errorListener = new _ErrorCollector();
-  var reader = new CharSequenceReader(new CharSequence(code));
-  var scanner = new Scanner(null, reader, errorListener);
-  var token = scanner.tokenize();
-  var parser = new Parser(null, errorListener);
-  return parser.parseCompilationUnit(token);
-}
+_getSpan(SourceFile file, AstNode node) => file.span(node.offset, node.end);
 
-class _ErrorCollector extends AnalysisErrorListener {
-  final errors = <AnalysisError>[];
-  onError(error) => errors.add(error);
-}
-
-_getSpan(SourceFile file, ASTNode node) => file.span(node.offset, node.end);
-
-/** True if the node has the `@observable` or `@published` annotation. */
+/// True if the node has the `@observable` or `@published` annotation.
 // TODO(jmesserly): it is not good to be hard coding Polymer support here.
 bool _hasObservable(AnnotatedNode node) =>
     node.metadata.any(_isObservableAnnotation);
@@ -260,7 +245,7 @@ void _transformClass(ClassDeclaration cls, TextEditTransaction code,
   }
 }
 
-/** Adds "with ChangeNotifier" and associated implementation. */
+/// Adds "with ChangeNotifier" and associated implementation.
 void _mixinObservable(ClassDeclaration cls, TextEditTransaction code) {
   // Note: we need to be careful to put the with clause after extends, but
   // before implements clause.
@@ -284,7 +269,7 @@ SimpleIdentifier _getSimpleIdentifier(Identifier id) =>
 bool _hasKeyword(Token token, Keyword keyword) =>
     token is KeywordToken && token.keyword == keyword;
 
-String _getOriginalCode(TextEditTransaction code, ASTNode node) =>
+String _getOriginalCode(TextEditTransaction code, AstNode node) =>
     code.original.substring(node.offset, node.end);
 
 void _fixConstructor(ConstructorDeclaration ctor, TextEditTransaction code,
